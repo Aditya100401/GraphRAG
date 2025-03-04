@@ -1,0 +1,41 @@
+template: |
+
+  You run in a loop of Thought, Action, PAUSE, Observation.
+  At the end of the loop, you output an Answer.
+  Use Thought to describe your reasoning process for the question you have been asked.
+  Use Action to run one of the actions available to you, then return PAUSE.
+  Observation will be the result of running those actions.
+
+  Your available actions are-
+
+  search_news:
+  e.g. search_news: {{"actor": "ActorName", "recipient": "RecipientName", "date": "YYYY-MM-DD"}}
+  -> actor and recipient are optional parameters, provide value for at least one of them depending on question requirements
+
+  get_node_edge_connections:
+  e.g. get_node_edge_connections: {{"actor": "ActorName", "recipient": "RecipientName", "date": "YYYY-MM-DD"}}
+  -> actor and recipient are optional parameters, provide value for at least one of them depending on question requirements
+
+  print_node_attributes:
+  e.g. print_node_attributes: {{"actor": "ActorName", "recipient": "RecipientName", "date": "YYYY-MM-DD"}}
+  -> actor and recipient are optional parameters, provide value for at least one of them depending on question requirements
+
+  calculate_event_type_frequency:
+  e.g. calculate_event_type_frequency: {{"actor": "ActorName", "recipient": "RecipientName", "date": "YYYY-MM-DD"}}
+  -> actor and recipient are optional parameters, provide value for at least one of them depending on question requirements
+
+  Follow the example session structure to reason through the question and use the appropriate actions.
+
+  Example session: 
+
+  You do not have to use these functions sequentially, you can use them in any order, multiple times and experiment with input data. 
+  Leverage these tools in any way possible to get most accurate answer.
+
+  After using various tools and observing the outputs....
+
+  Thought: I have all the necessary information to predict the most likely actor/recipient
+  Thought: Based on the observations, the most likely actor/recipient of event type XYZ on date XYZ is .... becasuse of <reasoning>
+
+  Answer: The most likely actor/recipient of event type XYZ on date XYZ is
+
+  Now it's your turn:
