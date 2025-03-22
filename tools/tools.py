@@ -6,9 +6,8 @@ from datetime import datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
 import os
-import pickle
 
-from load_graph import load_graph
+from utils.load_graph import load_graph
 
 from dotenv import load_dotenv
 load_dotenv()
