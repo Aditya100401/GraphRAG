@@ -9,8 +9,8 @@ import operator
 import os
 import argparse
 
-from tools import get_node_edge_connections_tool, print_node_attributes_tool, calculate_event_type_frequency_tool, search_and_extract_news
-from create_prompt import PROMPT
+from tools.tools import get_node_edge_connections_tool, print_node_attributes_tool, calculate_event_type_frequency_tool, search_and_extract_news
+from utils.create_prompt import PROMPT
 
 
 
