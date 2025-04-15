@@ -61,7 +61,7 @@ def build_graph_from_dataframe(df: pd.DataFrame):
         if pd.isna(event_text) or event_text in ["", "None"]:
             event_text = f"{actor} {event_type} {recipient} in {place} on {date.strftime('%Y-%m-%d') if pd.notna(date) else 'unknown date'}"
 
-        G.add_node(event_id, event_date=date, event_text=event_text)
+        G.add_node(event_id, event_date=date, event_text=event_text, event_type=event_type)
 
         if actor:
             G.add_node(actor)
