@@ -1,3 +1,4 @@
 {
-    "dotenv.enableAutocloaking": true
+    "dotenv.enableAutocloaking": false,
+    "glassit.alpha": 225
 }

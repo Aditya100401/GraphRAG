@@ -1,0 +1,2893 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d10" for="edge" attr.name="actor" attr.type="string"/>
+<key id="d9" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d8" for="node" attr.name="title" attr.type="string"/>
+<key id="d7" for="node" attr.name="contexts" attr.type="string"/>
+<key id="d6" for="node" attr.name="quad_code" attr.type="string"/>
+<key id="d5" for="node" attr.name="intensity" attr.type="double"/>
+<key id="d4" for="node" attr.name="place" attr.type="string"/>
+<key id="d3" for="node" attr.name="event_type" attr.type="string"/>
+<key id="d2" for="node" attr.name="event_ts" attr.type="double"/>
+<key id="d1" for="node" attr.name="event_date" attr.type="string"/>
+<key id="d0" for="node" attr.name="node_type" attr.type="string"/>
+<graph edgedefault="directed"><node id="20220802-0148-5961A21135C4_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-02</data>
+  <data key="d2">1659398400.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Human_Rights</data>
+</node>
+<node id="Taliban">
+  <data key="d0">recipient</data>
+  <data key="d8">Islamist Group</data>
+</node>
+<node id="Ayman Al-Zawahiri">
+  <data key="d0">recipient</data>
+  <data key="d8">Islamic Militant</data>
+</node>
+<node id="Assault">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="Afghanistan">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220802-0886-87D346B0Eaf1_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-02</data>
+  <data key="d2">1659398400.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Kabul">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220802-4722-464Ac6Ae8A85_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-02</data>
+  <data key="d2">1659398400.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="Accuse">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20220803-3364-D7510127Ea92_Assault_Targeted">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-03</data>
+  <data key="d2">1659484800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-10.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="20220804-4852-D75Ab1F05C9A_Threaten">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-04</data>
+  <data key="d2">1659571200.0</data>
+  <data key="d3">Threaten</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.5</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="Threaten">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20220525-5535-9Fb386322706_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-25</data>
+  <data key="d2">1653436800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="Islamic State">
+  <data key="d0">recipient</data>
+  <data key="d8">Salafi Jihadist</data>
+</node>
+<node id="20220620-7371-40D410Efaafc_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-20</data>
+  <data key="d2">1655683200.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20220707-9811-8E43365E6B03_Mobilize">
+  <data key="d0">event</data>
+  <data key="d1">2022-07-07</data>
+  <data key="d2">1657152000.0</data>
+  <data key="d3">Mobilize</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-5.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="Mobilize">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20220801-5637-4A13Ab80E2B8_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-01</data>
+  <data key="d2">1659312000.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Intelligence | Terrorism</data>
+</node>
+<node id="20221022-5661-773D776D29D3_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-10-22</data>
+  <data key="d2">1666396800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Diplomatic | Terrorism</data>
+</node>
+<node id="20221022-9332-Fd18Efb7B47D_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-10-22</data>
+  <data key="d2">1666396800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Diplomatic | Terrorism</data>
+</node>
+<node id="20230105-1441-C3E63628Bf0C_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-01-05</data>
+  <data key="d2">1672876800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Religion_Ethnicity | Diplomatic | Terrorism</data>
+</node>
+<node id="20230105-1734-3957A635D590_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-01-05</data>
+  <data key="d2">1672876800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Religion_Ethnicity | Diplomatic | Terrorism</data>
+</node>
+<node id="20230105-1734-3957A635D590_Coerce_Arrest">
+  <data key="d0">event</data>
+  <data key="d1">2023-01-05</data>
+  <data key="d2">1672876800.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-7.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Religion_Ethnicity | Diplomatic | Terrorism</data>
+</node>
+<node id="Coerce">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20230214-8308-Ffe4D826Aa87_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-02-14</data>
+  <data key="d2">1676332800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20230214-0180-5Be325Cce16A_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-02-14</data>
+  <data key="d2">1676332800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20230228-8914-Cd10B2A4306C_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-02-28</data>
+  <data key="d2">1677542400.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20230228-1097-28C02215Da99_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-02-28</data>
+  <data key="d2">1677542400.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Intelligence | Terrorism</data>
+</node>
+<node id="20230322-6697-C20B12Ab1D15_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-03-22</data>
+  <data key="d2">1679443200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20230404-4223-D29A3054582F_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-04-04</data>
+  <data key="d2">1680566400.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Northern Afghanistan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Intelligence | Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="Northern Afghanistan">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20230424-3546-0E07B1C1403C_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-04-24</data>
+  <data key="d2">1682294400.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20230425-3561-F27D6C167929_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-04-25</data>
+  <data key="d2">1682380800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="20230426-6158-996D6Aa5B67C_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-04-26</data>
+  <data key="d2">1682467200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="20230601-5436-63Fe0B69B2Cf_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-06-01</data>
+  <data key="d2">1685577600.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Eastern Afghanistan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="Eastern Afghanistan">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220104-5217-2Baa38C236C2_Threaten">
+  <data key="d0">event</data>
+  <data key="d1">2022-01-04</data>
+  <data key="d2">1641254400.0</data>
+  <data key="d3">Threaten</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.5</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220303-7445-5C61773Ad0A8_Threaten">
+  <data key="d0">event</data>
+  <data key="d1">2022-03-03</data>
+  <data key="d2">1646265600.0</data>
+  <data key="d3">Threaten</data>
+  <data key="d4">Daikundi Province</data>
+  <data key="d5">-3.5</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military | Religion_Ethnicity</data>
+</node>
+<node id="Daikundi Province">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220316-3787-3D7A2089313D_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-03-16</data>
+  <data key="d2">1647388800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kunduz</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Human_Rights</data>
+</node>
+<node id="Kunduz">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220322-3049-628127736Ecf_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-03-22</data>
+  <data key="d2">1647907200.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Health</data>
+</node>
+<node id="Sanction">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20220329-3071-4Acd9B788C7B_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-03-29</data>
+  <data key="d2">1648512000.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Nangarhar Province</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Nangarhar Province">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220331-0821-Ab39949958E8_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-03-31</data>
+  <data key="d2">1648684800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Panjshir</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Panjshir">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220408-3583-903De7Dac01D_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-04-08</data>
+  <data key="d2">1649376000.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220418-2054-F33051Da899C_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-04-18</data>
+  <data key="d2">1650240000.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Ghazni</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Ghazni">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220422-3360-117Cdd26216A_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-04-22</data>
+  <data key="d2">1650585600.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="20220429-3653-C9E3Cdb79863_Threaten">
+  <data key="d0">event</data>
+  <data key="d1">2022-04-29</data>
+  <data key="d2">1651190400.0</data>
+  <data key="d3">Threaten</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.5</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Migration</data>
+</node>
+<node id="20220511-5883-101D30Ccf7E7_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-11</data>
+  <data key="d2">1652227200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Takhar Province 'S Warsaj District</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="Takhar Province 'S Warsaj District">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220512-6205-Afa655A52Af6_Mobilize">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-12</data>
+  <data key="d2">1652313600.0</data>
+  <data key="d3">Mobilize</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-5.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20220512-7022-Aae857Cda072_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-12</data>
+  <data key="d2">1652313600.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Baghlan</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Baghlan">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220516-3411-1Fe8Cdbea038_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-16</data>
+  <data key="d2">1652659200.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Human_Rights | Diplomatic</data>
+</node>
+<node id="20220523-4858-36D8520C666D_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-23</data>
+  <data key="d2">1653264000.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Herat</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Herat">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220523-4382-5257A6D70192_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-23</data>
+  <data key="d2">1653264000.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Ghazni</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220525-1254-4F1706853D31_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-25</data>
+  <data key="d2">1653436800.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220526-8168-C8290Dcd5A68_Concede">
+  <data key="d0">event</data>
+  <data key="d1">2022-05-26</data>
+  <data key="d2">1653523200.0</data>
+  <data key="d3">Concede</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">4.5</data>
+  <data key="d6">Verbal Cooperation</data>
+  <data key="d7">Diplomatic</data>
+</node>
+<node id="Concede">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20220602-7563-Ea8D64587Df0_Protest">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-02</data>
+  <data key="d2">1654128000.0</data>
+  <data key="d3">Protest</data>
+  <data key="d4">Panjshir</data>
+  <data key="d5">-5.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Protest">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20220603-5334-F3C10F925E3E_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-03</data>
+  <data key="d2">1654214400.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Herat</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220610-7114-86Dd5F1B4E3F_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-10</data>
+  <data key="d2">1654819200.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Kandahar</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Kandahar">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220615-7583-B6F40F44938A_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-15</data>
+  <data key="d2">1655251200.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Herat</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220616-4462-16Ab4Edf03E8_Protest">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-16</data>
+  <data key="d2">1655337600.0</data>
+  <data key="d3">Protest</data>
+  <data key="d4">Kandahar City</data>
+  <data key="d5">-5.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Kandahar City">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220616-0475-6Be74D6F17D7_Concede">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-16</data>
+  <data key="d2">1655337600.0</data>
+  <data key="d3">Concede</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">4.5</data>
+  <data key="d6">Verbal Cooperation</data>
+  <data key="d7"></data>
+</node>
+<node id="20220620-0461-7Df2610583A4_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-20</data>
+  <data key="d2">1655683200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Panjshir Valley</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="Panjshir Valley">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220621-9227-E92Cbf1C4993_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-06-21</data>
+  <data key="d2">1655769600.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Panjshir</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220707-4034-Db70730Cb772_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-07-07</data>
+  <data key="d2">1657152000.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Nangarhar; Kunar</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Human_Rights | Terrorism</data>
+</node>
+<node id="Nangarhar; Kunar">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220719-9819-E84Fafd532Cd_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-07-19</data>
+  <data key="d2">1658188800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Northern Afghanistan; Eastern Afghanistan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="Northern Afghanistan; Eastern Afghanistan">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220722-9400-318B79355D8F_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-07-22</data>
+  <data key="d2">1658448000.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Takhar</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="Takhar">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220725-2764-B62Fe8C9C335_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-07-25</data>
+  <data key="d2">1658707200.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Kapisa</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Kapisa">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220726-2091-B7D777485595_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-07-26</data>
+  <data key="d2">1658793600.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Zabul</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Zabul">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220727-4639-17A83B5D0492_Coerce_Arrest">
+  <data key="d0">event</data>
+  <data key="d1">2022-07-27</data>
+  <data key="d2">1658880000.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Helmand</data>
+  <data key="d5">-7.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Helmand">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220803-3364-D7510127Ea92_Request">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-03</data>
+  <data key="d2">1659484800.0</data>
+  <data key="d3">Request</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">0.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="Request">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20220803-7513-186219Bfbdd7_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-03</data>
+  <data key="d2">1659484800.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Zabul</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220809-2306-B7F5D0Eea013_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-09</data>
+  <data key="d2">1660003200.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Ghazni</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220810-7793-E9169C529F63_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-10</data>
+  <data key="d2">1660089600.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Nimroz</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Nimroz">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220814-4047-Bc2Af5Bc18A7_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-14</data>
+  <data key="d2">1660435200.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="20220814-9317-D2Bfef076D35_Protest">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-14</data>
+  <data key="d2">1660435200.0</data>
+  <data key="d3">Protest</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-5.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220817-4743-477Bee3F1091_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-17</data>
+  <data key="d2">1660694400.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20220818-1516-Ed9000C605E2_Threaten">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-18</data>
+  <data key="d2">1660780800.0</data>
+  <data key="d3">Threaten</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.5</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20220831-9929-Aa0F87E376A8_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-31</data>
+  <data key="d2">1661904000.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Baghlan</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220907-2091-2396A6307349_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-09-07</data>
+  <data key="d2">1662508800.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Herat</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220912-1848-38A096Ac92Fa_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-09-12</data>
+  <data key="d2">1662940800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Panjshir</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="20220912-0802-3921D1Bfa6Bc_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-09-12</data>
+  <data key="d2">1662940800.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Panjshir</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20220913-4267-De818D7C28Fc_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-09-13</data>
+  <data key="d2">1663027200.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Herat</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20220919-5027-E7618A81C652_Mobilize">
+  <data key="d0">event</data>
+  <data key="d1">2022-09-19</data>
+  <data key="d2">1663545600.0</data>
+  <data key="d3">Mobilize</data>
+  <data key="d4">Faryab</data>
+  <data key="d5">-5.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Faryab">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20220920-9086-E298Cde4D712_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-09-20</data>
+  <data key="d2">1663632000.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Ghazni</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20221006-7513-E3F643E8D883_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-10-06</data>
+  <data key="d2">1665014400.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20221020-2816-Edba4C239F58_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-10-20</data>
+  <data key="d2">1666224000.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Uruzgan</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="Uruzgan">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20221020-1746-87C0A72D5B75_Retreat">
+  <data key="d0">event</data>
+  <data key="d1">2022-10-20</data>
+  <data key="d2">1666224000.0</data>
+  <data key="d3">Retreat</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">6.5</data>
+  <data key="d6">Material Cooperation</data>
+  <data key="d7"></data>
+</node>
+<node id="Retreat">
+  <data key="d0">eventType</data>
+  <data key="d8"></data>
+</node>
+<node id="20221024-7623-505D7B97A5E2_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-10-24</data>
+  <data key="d2">1666569600.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Panjshir</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20221221-8568-573E6A7948B8_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-12-21</data>
+  <data key="d2">1671580800.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Diplomatic</data>
+</node>
+<node id="20221221-9670-6F2Cbf842A37_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2022-12-21</data>
+  <data key="d2">1671580800.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Diplomatic</data>
+</node>
+<node id="20221222-6158-Df5536837B09_Coerce_Censor">
+  <data key="d0">event</data>
+  <data key="d1">2022-12-22</data>
+  <data key="d2">1671667200.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20230101-1489-20348De1C954_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-01-01</data>
+  <data key="d2">1672531200.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20230123-8280-007A36B28362_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-01-23</data>
+  <data key="d2">1674432000.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Human_Rights</data>
+</node>
+<node id="20230222-2226-5A2A4D8Da46A_Threaten">
+  <data key="d0">event</data>
+  <data key="d1">2023-02-22</data>
+  <data key="d2">1677024000.0</data>
+  <data key="d3">Threaten</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.5</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Intelligence | Terrorism</data>
+</node>
+<node id="20230309-0958-9Dd469F40Db7_Coerce">
+  <data key="d0">event</data>
+  <data key="d1">2023-03-09</data>
+  <data key="d2">1678320000.0</data>
+  <data key="d3">Coerce</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-7.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Human_Rights</data>
+</node>
+<node id="20230309-3054-D6906A90B038_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-03-09</data>
+  <data key="d2">1678320000.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Mazar - I - Sharif</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="Mazar - I - Sharif">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20230309-0201-D6906A90B038_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-03-09</data>
+  <data key="d2">1678320000.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Mazar - I - Sharif</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="20230309-5030-70176039Ed15_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-03-09</data>
+  <data key="d2">1678320000.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Balkh Province</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="Balkh Province">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20230330-8938-1F03713A77Cf_Concede">
+  <data key="d0">event</data>
+  <data key="d1">2023-03-30</data>
+  <data key="d2">1680134400.0</data>
+  <data key="d3">Concede</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">4.5</data>
+  <data key="d6">Verbal Cooperation</data>
+  <data key="d7">Intelligence</data>
+</node>
+<node id="20230523-8196-Acd849248139_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2023-05-23</data>
+  <data key="d2">1684800000.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Migration</data>
+</node>
+<node id="20230525-9860-494F423Dfbc9_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2023-05-25</data>
+  <data key="d2">1684972800.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Migration</data>
+</node>
+<node id="20230822-1779-2Ea48Fe1F881_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-08-22</data>
+  <data key="d2">1692662400.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Badakhshan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="Badakhshan">
+  <data key="d0">location</data>
+  <data key="d8"></data>
+</node>
+<node id="20230823-3240-4513Db27676D_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-08-23</data>
+  <data key="d2">1692748800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Human_Rights</data>
+</node>
+<node id="20231002-3478-F2473A176F33_Request">
+  <data key="d0">event</data>
+  <data key="d1">2023-10-02</data>
+  <data key="d2">1696204800.0</data>
+  <data key="d3">Request</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">0.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20231214-1747-73C8Be1621B9_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-12-14</data>
+  <data key="d2">1702512000.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Human_Rights | Diplomatic</data>
+</node>
+<node id="20240102-4193-3Edbfd8388Ab_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2024-01-02</data>
+  <data key="d2">1704153600.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Illegal_Drugs</data>
+</node>
+<node id="20240106-4755-E9576E41D601_Sanction">
+  <data key="d0">event</data>
+  <data key="d1">2024-01-06</data>
+  <data key="d2">1704499200.0</data>
+  <data key="d3">Sanction</data>
+  <data key="d4">Badakhshan</data>
+  <data key="d5">-6.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20240106-4755-E9576E41D601_Mobilize_Police">
+  <data key="d0">event</data>
+  <data key="d1">2024-01-06</data>
+  <data key="d2">1704499200.0</data>
+  <data key="d3">Mobilize</data>
+  <data key="d4">Badakhshan</data>
+  <data key="d5">-5.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20240106-4755-E9576E41D601_Mobilize_Troops">
+  <data key="d0">event</data>
+  <data key="d1">2024-01-06</data>
+  <data key="d2">1704499200.0</data>
+  <data key="d3">Mobilize</data>
+  <data key="d4">Badakhshan</data>
+  <data key="d5">-6.5</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20240110-0232-016271Fadb11_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2024-01-10</data>
+  <data key="d2">1704844800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20240130-9031-28F22F355285_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2024-01-30</data>
+  <data key="d2">1706572800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military</data>
+</node>
+<node id="20240130-0796-7B9377173B78_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2024-01-30</data>
+  <data key="d2">1706572800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20220804-6932-Bd9E6B93A36D_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-04</data>
+  <data key="d2">1659571200.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="20220804-2394-3C53C1F97D1E_Assault_Targeted">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-04</data>
+  <data key="d2">1659571200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-10.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="20220809-2658-9Dd440Ed2D2E_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-09</data>
+  <data key="d2">1660003200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="20220824-8999-7F2Da7E37119_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2022-08-24</data>
+  <data key="d2">1661299200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="20230220-6537-153B736B979E_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-02-20</data>
+  <data key="d2">1676851200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Terrorism</data>
+</node>
+<node id="20230710-6913-C48Ad642A600_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-07-10</data>
+  <data key="d2">1688947200.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military | Terrorism</data>
+</node>
+<node id="20230809-0029-A3Abd49Dac68_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2023-08-09</data>
+  <data key="d2">1691539200.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20230828-4933-363211667E43_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-08-28</data>
+  <data key="d2">1693180800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20230911-3889-C4E026144Fe3_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2023-09-11</data>
+  <data key="d2">1694390400.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Military | Diplomatic | Terrorism</data>
+</node>
+<node id="20240214-0195-B2E99B41D827_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2024-02-14</data>
+  <data key="d2">1707868800.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7">Religion_Ethnicity | Terrorism</data>
+</node>
+<node id="20240201-8310-33Ffe44E0731_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2024-02-01</data>
+  <data key="d2">1706745600.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Kabul</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20240313-6941-Fd93Bd743A8D_Accuse">
+  <data key="d0">event</data>
+  <data key="d1">2024-03-13</data>
+  <data key="d2">1710288000.0</data>
+  <data key="d3">Accuse</data>
+  <data key="d4">Afghanistan</data>
+  <data key="d5">-3.0</data>
+  <data key="d6">Verbal Conflict</data>
+  <data key="d7"></data>
+</node>
+<node id="20240508-8744-E4A0A2Ae60Ea_Protest_Demo">
+  <data key="d0">event</data>
+  <data key="d1">2024-05-08</data>
+  <data key="d2">1715126400.0</data>
+  <data key="d3">Protest</data>
+  <data key="d4">Northern Afghanistan</data>
+  <data key="d5">-5.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Terrorism | Illegal_Drugs</data>
+</node>
+<node id="20240508-5756-50Ccdec00Ca7_Protest_Demo">
+  <data key="d0">event</data>
+  <data key="d1">2024-05-08</data>
+  <data key="d2">1715126400.0</data>
+  <data key="d3">Protest</data>
+  <data key="d4">Northern Afghanistan</data>
+  <data key="d5">-5.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Illegal_Drugs</data>
+</node>
+<node id="20240617-4097-0Dc2B2De8A64_Assault">
+  <data key="d0">event</data>
+  <data key="d1">2024-06-17</data>
+  <data key="d2">1718582400.0</data>
+  <data key="d3">Assault</data>
+  <data key="d4">Herat</data>
+  <data key="d5">-9.0</data>
+  <data key="d6">Material Conflict</data>
+  <data key="d7">Military | Intelligence | Religion_Ethnicity | Terrorism</data>
+</node>
+<edge source="20220802-0148-5961A21135C4_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220802-0148-5961A21135C4_Assault" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220802-0148-5961A21135C4_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220802-0148-5961A21135C4_Assault" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220802-0148-5961A21135C4_Assault" target="20220802-0886-87D346B0Eaf1_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220802-0886-87D346B0Eaf1_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220802-0886-87D346B0Eaf1_Assault" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220802-0886-87D346B0Eaf1_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220802-0886-87D346B0Eaf1_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220802-0886-87D346B0Eaf1_Assault" target="20220802-4722-464Ac6Ae8A85_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220802-4722-464Ac6Ae8A85_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220802-4722-464Ac6Ae8A85_Accuse" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220802-4722-464Ac6Ae8A85_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220802-4722-464Ac6Ae8A85_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220802-4722-464Ac6Ae8A85_Accuse" target="20220803-3364-D7510127Ea92_Assault_Targeted">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Assault_Targeted" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Assault_Targeted" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Assault_Targeted" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Assault_Targeted" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Assault_Targeted" target="20220803-3364-D7510127Ea92_Request">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220804-4852-D75Ab1F05C9A_Threaten" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220804-4852-D75Ab1F05C9A_Threaten" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220804-4852-D75Ab1F05C9A_Threaten" target="Threaten">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220804-4852-D75Ab1F05C9A_Threaten" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220804-4852-D75Ab1F05C9A_Threaten" target="20220804-6932-Bd9E6B93A36D_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220525-5535-9Fb386322706_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220525-5535-9Fb386322706_Accuse" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220525-5535-9Fb386322706_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220525-5535-9Fb386322706_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220525-5535-9Fb386322706_Accuse" target="20220526-8168-C8290Dcd5A68_Concede">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220620-7371-40D410Efaafc_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220620-7371-40D410Efaafc_Accuse" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220620-7371-40D410Efaafc_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220620-7371-40D410Efaafc_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220620-7371-40D410Efaafc_Accuse" target="20220621-9227-E92Cbf1C4993_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220707-9811-8E43365E6B03_Mobilize" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220707-9811-8E43365E6B03_Mobilize" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220707-9811-8E43365E6B03_Mobilize" target="Mobilize">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220707-9811-8E43365E6B03_Mobilize" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220707-9811-8E43365E6B03_Mobilize" target="20220719-9819-E84Fafd532Cd_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220801-5637-4A13Ab80E2B8_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220801-5637-4A13Ab80E2B8_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220801-5637-4A13Ab80E2B8_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220801-5637-4A13Ab80E2B8_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220801-5637-4A13Ab80E2B8_Assault" target="20220802-0148-5961A21135C4_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221022-5661-773D776D29D3_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20221022-5661-773D776D29D3_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221022-5661-773D776D29D3_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221022-5661-773D776D29D3_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221022-5661-773D776D29D3_Assault" target="20221022-9332-Fd18Efb7B47D_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221022-9332-Fd18Efb7B47D_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20221022-9332-Fd18Efb7B47D_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221022-9332-Fd18Efb7B47D_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221022-9332-Fd18Efb7B47D_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221022-9332-Fd18Efb7B47D_Assault" target="20221024-7623-505D7B97A5E2_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230105-1441-C3E63628Bf0C_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230105-1441-C3E63628Bf0C_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230105-1441-C3E63628Bf0C_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230105-1441-C3E63628Bf0C_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230105-1441-C3E63628Bf0C_Assault" target="20230105-1734-3957A635D590_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Assault" target="20230105-1734-3957A635D590_Coerce_Arrest">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Coerce_Arrest" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Coerce_Arrest" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Coerce_Arrest" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Coerce_Arrest" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230105-1734-3957A635D590_Coerce_Arrest" target="20230123-8280-007A36B28362_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230214-8308-Ffe4D826Aa87_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230214-8308-Ffe4D826Aa87_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230214-8308-Ffe4D826Aa87_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230214-8308-Ffe4D826Aa87_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230214-8308-Ffe4D826Aa87_Assault" target="20230220-6537-153B736B979E_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230214-0180-5Be325Cce16A_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230214-0180-5Be325Cce16A_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230214-0180-5Be325Cce16A_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230214-0180-5Be325Cce16A_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230214-0180-5Be325Cce16A_Assault" target="20230214-8308-Ffe4D826Aa87_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230228-8914-Cd10B2A4306C_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230228-8914-Cd10B2A4306C_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230228-8914-Cd10B2A4306C_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230228-8914-Cd10B2A4306C_Assault" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230228-8914-Cd10B2A4306C_Assault" target="20230309-0201-D6906A90B038_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230228-1097-28C02215Da99_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230228-1097-28C02215Da99_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230228-1097-28C02215Da99_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230228-1097-28C02215Da99_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230228-1097-28C02215Da99_Assault" target="20230228-8914-Cd10B2A4306C_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230322-6697-C20B12Ab1D15_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230322-6697-C20B12Ab1D15_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230322-6697-C20B12Ab1D15_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230322-6697-C20B12Ab1D15_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230322-6697-C20B12Ab1D15_Assault" target="20230330-8938-1F03713A77Cf_Concede">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230404-4223-D29A3054582F_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230404-4223-D29A3054582F_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230404-4223-D29A3054582F_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230404-4223-D29A3054582F_Assault" target="Northern Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230404-4223-D29A3054582F_Assault" target="20230424-3546-0E07B1C1403C_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230424-3546-0E07B1C1403C_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230424-3546-0E07B1C1403C_Accuse" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230424-3546-0E07B1C1403C_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230424-3546-0E07B1C1403C_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230424-3546-0E07B1C1403C_Accuse" target="20230425-3561-F27D6C167929_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230425-3561-F27D6C167929_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230425-3561-F27D6C167929_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230425-3561-F27D6C167929_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230425-3561-F27D6C167929_Assault" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230425-3561-F27D6C167929_Assault" target="20230426-6158-996D6Aa5B67C_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230426-6158-996D6Aa5B67C_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230426-6158-996D6Aa5B67C_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230426-6158-996D6Aa5B67C_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230426-6158-996D6Aa5B67C_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230426-6158-996D6Aa5B67C_Assault" target="20230523-8196-Acd849248139_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230601-5436-63Fe0B69B2Cf_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230601-5436-63Fe0B69B2Cf_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230601-5436-63Fe0B69B2Cf_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230601-5436-63Fe0B69B2Cf_Assault" target="Eastern Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230601-5436-63Fe0B69B2Cf_Assault" target="20230710-6913-C48Ad642A600_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220104-5217-2Baa38C236C2_Threaten" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220104-5217-2Baa38C236C2_Threaten" target="Threaten">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220104-5217-2Baa38C236C2_Threaten" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220104-5217-2Baa38C236C2_Threaten" target="20220303-7445-5C61773Ad0A8_Threaten">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220303-7445-5C61773Ad0A8_Threaten" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220303-7445-5C61773Ad0A8_Threaten" target="Threaten">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220303-7445-5C61773Ad0A8_Threaten" target="Daikundi Province">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220303-7445-5C61773Ad0A8_Threaten" target="20220316-3787-3D7A2089313D_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220316-3787-3D7A2089313D_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220316-3787-3D7A2089313D_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220316-3787-3D7A2089313D_Accuse" target="Kunduz">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220316-3787-3D7A2089313D_Accuse" target="20220322-3049-628127736Ecf_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220322-3049-628127736Ecf_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220322-3049-628127736Ecf_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220322-3049-628127736Ecf_Sanction" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220322-3049-628127736Ecf_Sanction" target="20220329-3071-4Acd9B788C7B_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220329-3071-4Acd9B788C7B_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220329-3071-4Acd9B788C7B_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220329-3071-4Acd9B788C7B_Sanction" target="Nangarhar Province">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220329-3071-4Acd9B788C7B_Sanction" target="20220331-0821-Ab39949958E8_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220331-0821-Ab39949958E8_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220331-0821-Ab39949958E8_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220331-0821-Ab39949958E8_Accuse" target="Panjshir">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220331-0821-Ab39949958E8_Accuse" target="20220408-3583-903De7Dac01D_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220408-3583-903De7Dac01D_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220408-3583-903De7Dac01D_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220408-3583-903De7Dac01D_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220408-3583-903De7Dac01D_Accuse" target="20220418-2054-F33051Da899C_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220418-2054-F33051Da899C_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220418-2054-F33051Da899C_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220418-2054-F33051Da899C_Sanction" target="Ghazni">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220418-2054-F33051Da899C_Sanction" target="20220422-3360-117Cdd26216A_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220422-3360-117Cdd26216A_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220422-3360-117Cdd26216A_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220422-3360-117Cdd26216A_Coerce_Censor" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220422-3360-117Cdd26216A_Coerce_Censor" target="20220429-3653-C9E3Cdb79863_Threaten">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220429-3653-C9E3Cdb79863_Threaten" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220429-3653-C9E3Cdb79863_Threaten" target="Threaten">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220429-3653-C9E3Cdb79863_Threaten" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220429-3653-C9E3Cdb79863_Threaten" target="20220511-5883-101D30Ccf7E7_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220511-5883-101D30Ccf7E7_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220511-5883-101D30Ccf7E7_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220511-5883-101D30Ccf7E7_Assault" target="Takhar Province 'S Warsaj District">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220511-5883-101D30Ccf7E7_Assault" target="20220512-6205-Afa655A52Af6_Mobilize">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220512-6205-Afa655A52Af6_Mobilize" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220512-6205-Afa655A52Af6_Mobilize" target="Mobilize">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220512-6205-Afa655A52Af6_Mobilize" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220512-6205-Afa655A52Af6_Mobilize" target="20220512-7022-Aae857Cda072_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220512-7022-Aae857Cda072_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220512-7022-Aae857Cda072_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220512-7022-Aae857Cda072_Coerce_Censor" target="Baghlan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220512-7022-Aae857Cda072_Coerce_Censor" target="20220516-3411-1Fe8Cdbea038_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220516-3411-1Fe8Cdbea038_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220516-3411-1Fe8Cdbea038_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220516-3411-1Fe8Cdbea038_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220516-3411-1Fe8Cdbea038_Accuse" target="20220523-4382-5257A6D70192_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220523-4858-36D8520C666D_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220523-4858-36D8520C666D_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220523-4858-36D8520C666D_Sanction" target="Herat">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220523-4858-36D8520C666D_Sanction" target="20220525-1254-4F1706853D31_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220523-4382-5257A6D70192_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220523-4382-5257A6D70192_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220523-4382-5257A6D70192_Accuse" target="Ghazni">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220523-4382-5257A6D70192_Accuse" target="20220523-4858-36D8520C666D_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220525-1254-4F1706853D31_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220525-1254-4F1706853D31_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220525-1254-4F1706853D31_Coerce_Censor" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220525-1254-4F1706853D31_Coerce_Censor" target="20220525-5535-9Fb386322706_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220526-8168-C8290Dcd5A68_Concede" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220526-8168-C8290Dcd5A68_Concede" target="Concede">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220526-8168-C8290Dcd5A68_Concede" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220526-8168-C8290Dcd5A68_Concede" target="20220602-7563-Ea8D64587Df0_Protest">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220602-7563-Ea8D64587Df0_Protest" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220602-7563-Ea8D64587Df0_Protest" target="Protest">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220602-7563-Ea8D64587Df0_Protest" target="Panjshir">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220602-7563-Ea8D64587Df0_Protest" target="20220603-5334-F3C10F925E3E_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220603-5334-F3C10F925E3E_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220603-5334-F3C10F925E3E_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220603-5334-F3C10F925E3E_Coerce_Censor" target="Herat">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220603-5334-F3C10F925E3E_Coerce_Censor" target="20220610-7114-86Dd5F1B4E3F_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220610-7114-86Dd5F1B4E3F_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220610-7114-86Dd5F1B4E3F_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220610-7114-86Dd5F1B4E3F_Sanction" target="Kandahar">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220610-7114-86Dd5F1B4E3F_Sanction" target="20220615-7583-B6F40F44938A_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220615-7583-B6F40F44938A_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220615-7583-B6F40F44938A_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220615-7583-B6F40F44938A_Coerce_Censor" target="Herat">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220615-7583-B6F40F44938A_Coerce_Censor" target="20220616-0475-6Be74D6F17D7_Concede">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220616-4462-16Ab4Edf03E8_Protest" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220616-4462-16Ab4Edf03E8_Protest" target="Protest">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220616-4462-16Ab4Edf03E8_Protest" target="Kandahar City">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220616-4462-16Ab4Edf03E8_Protest" target="20220620-0461-7Df2610583A4_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220616-0475-6Be74D6F17D7_Concede" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220616-0475-6Be74D6F17D7_Concede" target="Concede">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220616-0475-6Be74D6F17D7_Concede" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220616-0475-6Be74D6F17D7_Concede" target="20220616-4462-16Ab4Edf03E8_Protest">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220620-0461-7Df2610583A4_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220620-0461-7Df2610583A4_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220620-0461-7Df2610583A4_Assault" target="Panjshir Valley">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220620-0461-7Df2610583A4_Assault" target="20220620-7371-40D410Efaafc_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220621-9227-E92Cbf1C4993_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220621-9227-E92Cbf1C4993_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220621-9227-E92Cbf1C4993_Assault" target="Panjshir">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220621-9227-E92Cbf1C4993_Assault" target="20220707-4034-Db70730Cb772_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220707-4034-Db70730Cb772_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220707-4034-Db70730Cb772_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220707-4034-Db70730Cb772_Accuse" target="Nangarhar; Kunar">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220707-4034-Db70730Cb772_Accuse" target="20220707-9811-8E43365E6B03_Mobilize">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220719-9819-E84Fafd532Cd_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220719-9819-E84Fafd532Cd_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220719-9819-E84Fafd532Cd_Assault" target="Northern Afghanistan; Eastern Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220719-9819-E84Fafd532Cd_Assault" target="20220722-9400-318B79355D8F_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220722-9400-318B79355D8F_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220722-9400-318B79355D8F_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220722-9400-318B79355D8F_Assault" target="Takhar">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220722-9400-318B79355D8F_Assault" target="20220725-2764-B62Fe8C9C335_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220725-2764-B62Fe8C9C335_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220725-2764-B62Fe8C9C335_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220725-2764-B62Fe8C9C335_Coerce_Censor" target="Kapisa">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220725-2764-B62Fe8C9C335_Coerce_Censor" target="20220726-2091-B7D777485595_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220726-2091-B7D777485595_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220726-2091-B7D777485595_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220726-2091-B7D777485595_Coerce_Censor" target="Zabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220726-2091-B7D777485595_Coerce_Censor" target="20220727-4639-17A83B5D0492_Coerce_Arrest">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220727-4639-17A83B5D0492_Coerce_Arrest" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220727-4639-17A83B5D0492_Coerce_Arrest" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220727-4639-17A83B5D0492_Coerce_Arrest" target="Helmand">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220727-4639-17A83B5D0492_Coerce_Arrest" target="20220801-5637-4A13Ab80E2B8_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Request" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Request" target="Request">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Request" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220803-3364-D7510127Ea92_Request" target="20220803-7513-186219Bfbdd7_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220803-7513-186219Bfbdd7_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220803-7513-186219Bfbdd7_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220803-7513-186219Bfbdd7_Sanction" target="Zabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220803-7513-186219Bfbdd7_Sanction" target="20220804-2394-3C53C1F97D1E_Assault_Targeted">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220809-2306-B7F5D0Eea013_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220809-2306-B7F5D0Eea013_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220809-2306-B7F5D0Eea013_Coerce_Censor" target="Ghazni">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220809-2306-B7F5D0Eea013_Coerce_Censor" target="20220809-2658-9Dd440Ed2D2E_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220810-7793-E9169C529F63_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220810-7793-E9169C529F63_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220810-7793-E9169C529F63_Coerce_Censor" target="Nimroz">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220810-7793-E9169C529F63_Coerce_Censor" target="20220814-4047-Bc2Af5Bc18A7_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220814-4047-Bc2Af5Bc18A7_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220814-4047-Bc2Af5Bc18A7_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220814-4047-Bc2Af5Bc18A7_Sanction" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220814-4047-Bc2Af5Bc18A7_Sanction" target="20220814-9317-D2Bfef076D35_Protest">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220814-9317-D2Bfef076D35_Protest" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220814-9317-D2Bfef076D35_Protest" target="Protest">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220814-9317-D2Bfef076D35_Protest" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220814-9317-D2Bfef076D35_Protest" target="20220817-4743-477Bee3F1091_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220817-4743-477Bee3F1091_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220817-4743-477Bee3F1091_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220817-4743-477Bee3F1091_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220817-4743-477Bee3F1091_Accuse" target="20220818-1516-Ed9000C605E2_Threaten">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220818-1516-Ed9000C605E2_Threaten" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220818-1516-Ed9000C605E2_Threaten" target="Threaten">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220818-1516-Ed9000C605E2_Threaten" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220818-1516-Ed9000C605E2_Threaten" target="20220824-8999-7F2Da7E37119_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220831-9929-Aa0F87E376A8_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220831-9929-Aa0F87E376A8_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220831-9929-Aa0F87E376A8_Coerce_Censor" target="Baghlan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220831-9929-Aa0F87E376A8_Coerce_Censor" target="20220907-2091-2396A6307349_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220907-2091-2396A6307349_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220907-2091-2396A6307349_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220907-2091-2396A6307349_Coerce_Censor" target="Herat">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220907-2091-2396A6307349_Coerce_Censor" target="20220912-0802-3921D1Bfa6Bc_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220912-1848-38A096Ac92Fa_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220912-1848-38A096Ac92Fa_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220912-1848-38A096Ac92Fa_Assault" target="Panjshir">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220912-1848-38A096Ac92Fa_Assault" target="20220913-4267-De818D7C28Fc_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220912-0802-3921D1Bfa6Bc_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220912-0802-3921D1Bfa6Bc_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220912-0802-3921D1Bfa6Bc_Assault" target="Panjshir">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220912-0802-3921D1Bfa6Bc_Assault" target="20220912-1848-38A096Ac92Fa_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220913-4267-De818D7C28Fc_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220913-4267-De818D7C28Fc_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220913-4267-De818D7C28Fc_Accuse" target="Herat">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220913-4267-De818D7C28Fc_Accuse" target="20220919-5027-E7618A81C652_Mobilize">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220919-5027-E7618A81C652_Mobilize" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220919-5027-E7618A81C652_Mobilize" target="Mobilize">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220919-5027-E7618A81C652_Mobilize" target="Faryab">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220919-5027-E7618A81C652_Mobilize" target="20220920-9086-E298Cde4D712_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220920-9086-E298Cde4D712_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220920-9086-E298Cde4D712_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220920-9086-E298Cde4D712_Accuse" target="Ghazni">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220920-9086-E298Cde4D712_Accuse" target="20221006-7513-E3F643E8D883_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221006-7513-E3F643E8D883_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221006-7513-E3F643E8D883_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221006-7513-E3F643E8D883_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221006-7513-E3F643E8D883_Accuse" target="20221020-1746-87C0A72D5B75_Retreat">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221020-2816-Edba4C239F58_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221020-2816-Edba4C239F58_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221020-2816-Edba4C239F58_Coerce_Censor" target="Uruzgan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221020-2816-Edba4C239F58_Coerce_Censor" target="20221022-5661-773D776D29D3_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221020-1746-87C0A72D5B75_Retreat" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221020-1746-87C0A72D5B75_Retreat" target="Retreat">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221020-1746-87C0A72D5B75_Retreat" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221020-1746-87C0A72D5B75_Retreat" target="20221020-2816-Edba4C239F58_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221024-7623-505D7B97A5E2_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221024-7623-505D7B97A5E2_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221024-7623-505D7B97A5E2_Coerce_Censor" target="Panjshir">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221024-7623-505D7B97A5E2_Coerce_Censor" target="20221221-8568-573E6A7948B8_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221221-8568-573E6A7948B8_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221221-8568-573E6A7948B8_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221221-8568-573E6A7948B8_Sanction" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221221-8568-573E6A7948B8_Sanction" target="20221221-9670-6F2Cbf842A37_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221221-9670-6F2Cbf842A37_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221221-9670-6F2Cbf842A37_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221221-9670-6F2Cbf842A37_Sanction" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221221-9670-6F2Cbf842A37_Sanction" target="20221222-6158-Df5536837B09_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20221222-6158-Df5536837B09_Coerce_Censor" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20221222-6158-Df5536837B09_Coerce_Censor" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20221222-6158-Df5536837B09_Coerce_Censor" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20221222-6158-Df5536837B09_Coerce_Censor" target="20230101-1489-20348De1C954_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230101-1489-20348De1C954_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230101-1489-20348De1C954_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230101-1489-20348De1C954_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230101-1489-20348De1C954_Accuse" target="20230105-1441-C3E63628Bf0C_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230123-8280-007A36B28362_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230123-8280-007A36B28362_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230123-8280-007A36B28362_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230123-8280-007A36B28362_Accuse" target="20230214-0180-5Be325Cce16A_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230222-2226-5A2A4D8Da46A_Threaten" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230222-2226-5A2A4D8Da46A_Threaten" target="Threaten">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230222-2226-5A2A4D8Da46A_Threaten" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230222-2226-5A2A4D8Da46A_Threaten" target="20230228-1097-28C02215Da99_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230309-0958-9Dd469F40Db7_Coerce" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230309-0958-9Dd469F40Db7_Coerce" target="Coerce">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230309-0958-9Dd469F40Db7_Coerce" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230309-0958-9Dd469F40Db7_Coerce" target="20230309-3054-D6906A90B038_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230309-3054-D6906A90B038_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230309-3054-D6906A90B038_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230309-3054-D6906A90B038_Assault" target="Mazar - I - Sharif">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230309-3054-D6906A90B038_Assault" target="20230309-5030-70176039Ed15_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230309-0201-D6906A90B038_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230309-0201-D6906A90B038_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230309-0201-D6906A90B038_Assault" target="Mazar - I - Sharif">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230309-0201-D6906A90B038_Assault" target="20230309-0958-9Dd469F40Db7_Coerce">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230309-5030-70176039Ed15_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230309-5030-70176039Ed15_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230309-5030-70176039Ed15_Assault" target="Balkh Province">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230309-5030-70176039Ed15_Assault" target="20230322-6697-C20B12Ab1D15_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230330-8938-1F03713A77Cf_Concede" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230330-8938-1F03713A77Cf_Concede" target="Concede">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230330-8938-1F03713A77Cf_Concede" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230330-8938-1F03713A77Cf_Concede" target="20230404-4223-D29A3054582F_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230523-8196-Acd849248139_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230523-8196-Acd849248139_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230523-8196-Acd849248139_Sanction" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230523-8196-Acd849248139_Sanction" target="20230525-9860-494F423Dfbc9_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230525-9860-494F423Dfbc9_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230525-9860-494F423Dfbc9_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230525-9860-494F423Dfbc9_Sanction" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230525-9860-494F423Dfbc9_Sanction" target="20230601-5436-63Fe0B69B2Cf_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230822-1779-2Ea48Fe1F881_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230822-1779-2Ea48Fe1F881_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230822-1779-2Ea48Fe1F881_Assault" target="Badakhshan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230822-1779-2Ea48Fe1F881_Assault" target="20230823-3240-4513Db27676D_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230823-3240-4513Db27676D_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230823-3240-4513Db27676D_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230823-3240-4513Db27676D_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230823-3240-4513Db27676D_Accuse" target="20230828-4933-363211667E43_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20231002-3478-F2473A176F33_Request" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20231002-3478-F2473A176F33_Request" target="Request">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20231002-3478-F2473A176F33_Request" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20231002-3478-F2473A176F33_Request" target="20231214-1747-73C8Be1621B9_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20231214-1747-73C8Be1621B9_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20231214-1747-73C8Be1621B9_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20231214-1747-73C8Be1621B9_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20231214-1747-73C8Be1621B9_Accuse" target="20240102-4193-3Edbfd8388Ab_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240102-4193-3Edbfd8388Ab_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240102-4193-3Edbfd8388Ab_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240102-4193-3Edbfd8388Ab_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240102-4193-3Edbfd8388Ab_Accuse" target="20240106-4755-E9576E41D601_Mobilize_Police">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Sanction" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Sanction" target="Sanction">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Sanction" target="Badakhshan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Sanction" target="20240110-0232-016271Fadb11_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Police" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Police" target="Mobilize">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Police" target="Badakhshan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Police" target="20240106-4755-E9576E41D601_Mobilize_Troops">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Troops" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Troops" target="Mobilize">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Troops" target="Badakhshan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240106-4755-E9576E41D601_Mobilize_Troops" target="20240106-4755-E9576E41D601_Sanction">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240110-0232-016271Fadb11_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240110-0232-016271Fadb11_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240110-0232-016271Fadb11_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240110-0232-016271Fadb11_Accuse" target="20240130-0796-7B9377173B78_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240130-9031-28F22F355285_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240130-9031-28F22F355285_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240130-9031-28F22F355285_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240130-9031-28F22F355285_Accuse" target="20240201-8310-33Ffe44E0731_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240130-0796-7B9377173B78_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240130-0796-7B9377173B78_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240130-0796-7B9377173B78_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240130-0796-7B9377173B78_Accuse" target="20240130-9031-28F22F355285_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220804-6932-Bd9E6B93A36D_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220804-6932-Bd9E6B93A36D_Accuse" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220804-6932-Bd9E6B93A36D_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220804-6932-Bd9E6B93A36D_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220804-6932-Bd9E6B93A36D_Accuse" target="20220809-2306-B7F5D0Eea013_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220804-2394-3C53C1F97D1E_Assault_Targeted" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220804-2394-3C53C1F97D1E_Assault_Targeted" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220804-2394-3C53C1F97D1E_Assault_Targeted" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220804-2394-3C53C1F97D1E_Assault_Targeted" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220804-2394-3C53C1F97D1E_Assault_Targeted" target="20220804-4852-D75Ab1F05C9A_Threaten">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220809-2658-9Dd440Ed2D2E_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220809-2658-9Dd440Ed2D2E_Assault" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220809-2658-9Dd440Ed2D2E_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220809-2658-9Dd440Ed2D2E_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220809-2658-9Dd440Ed2D2E_Assault" target="20220810-7793-E9169C529F63_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20220824-8999-7F2Da7E37119_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20220824-8999-7F2Da7E37119_Assault" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20220824-8999-7F2Da7E37119_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20220824-8999-7F2Da7E37119_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20220824-8999-7F2Da7E37119_Assault" target="20220831-9929-Aa0F87E376A8_Coerce_Censor">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230220-6537-153B736B979E_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230220-6537-153B736B979E_Assault" target="Ayman Al-Zawahiri">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230220-6537-153B736B979E_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230220-6537-153B736B979E_Assault" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230220-6537-153B736B979E_Assault" target="20230222-2226-5A2A4D8Da46A_Threaten">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230710-6913-C48Ad642A600_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230710-6913-C48Ad642A600_Accuse" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230710-6913-C48Ad642A600_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230710-6913-C48Ad642A600_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230710-6913-C48Ad642A600_Accuse" target="20230809-0029-A3Abd49Dac68_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230809-0029-A3Abd49Dac68_Assault" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230809-0029-A3Abd49Dac68_Assault" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230809-0029-A3Abd49Dac68_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230809-0029-A3Abd49Dac68_Assault" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230809-0029-A3Abd49Dac68_Assault" target="20230822-1779-2Ea48Fe1F881_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230828-4933-363211667E43_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230828-4933-363211667E43_Accuse" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230828-4933-363211667E43_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230828-4933-363211667E43_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230828-4933-363211667E43_Accuse" target="20230911-3889-C4E026144Fe3_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20230911-3889-C4E026144Fe3_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20230911-3889-C4E026144Fe3_Accuse" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20230911-3889-C4E026144Fe3_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20230911-3889-C4E026144Fe3_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20230911-3889-C4E026144Fe3_Accuse" target="20231002-3478-F2473A176F33_Request">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240214-0195-B2E99B41D827_Accuse" target="Taliban">
+  <data key="d9">actor</data>
+</edge>
+<edge source="20240214-0195-B2E99B41D827_Accuse" target="Islamic State">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240214-0195-B2E99B41D827_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240214-0195-B2E99B41D827_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240214-0195-B2E99B41D827_Accuse" target="20240313-6941-Fd93Bd743A8D_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240201-8310-33Ffe44E0731_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240201-8310-33Ffe44E0731_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240201-8310-33Ffe44E0731_Accuse" target="Kabul">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240201-8310-33Ffe44E0731_Accuse" target="20240214-0195-B2E99B41D827_Accuse">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240313-6941-Fd93Bd743A8D_Accuse" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240313-6941-Fd93Bd743A8D_Accuse" target="Accuse">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240313-6941-Fd93Bd743A8D_Accuse" target="Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240313-6941-Fd93Bd743A8D_Accuse" target="20240508-5756-50Ccdec00Ca7_Protest_Demo">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240508-8744-E4A0A2Ae60Ea_Protest_Demo" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240508-8744-E4A0A2Ae60Ea_Protest_Demo" target="Protest">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240508-8744-E4A0A2Ae60Ea_Protest_Demo" target="Northern Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240508-8744-E4A0A2Ae60Ea_Protest_Demo" target="20240617-4097-0Dc2B2De8A64_Assault">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240508-5756-50Ccdec00Ca7_Protest_Demo" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240508-5756-50Ccdec00Ca7_Protest_Demo" target="Protest">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240508-5756-50Ccdec00Ca7_Protest_Demo" target="Northern Afghanistan">
+  <data key="d9">location</data>
+</edge>
+<edge source="20240508-5756-50Ccdec00Ca7_Protest_Demo" target="20240508-8744-E4A0A2Ae60Ea_Protest_Demo">
+  <data key="d9">next_event</data>
+  <data key="d10">Taliban</data>
+</edge>
+<edge source="20240617-4097-0Dc2B2De8A64_Assault" target="Taliban">
+  <data key="d9">recipient</data>
+</edge>
+<edge source="20240617-4097-0Dc2B2De8A64_Assault" target="Assault">
+  <data key="d9">eventType</data>
+</edge>
+<edge source="20240617-4097-0Dc2B2De8A64_Assault" target="Herat">
+  <data key="d9">location</data>
+</edge>
+</graph></graphml>

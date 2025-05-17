@@ -1,10 +1,11 @@
 from langchain_core.messages import HumanMessage, BaseMessage, SystemMessage, AIMessage
 from langchain_core.runnables.graph import MermaidDrawMethod
 from langchain_groq import ChatGroq
-from langgraph.graph import StateGraph,  END
+from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode
+from langgraph.graph.message import add_messages  
 
-from typing import List, TypedDict, Annotated
+from typing import Sequence, TypedDict, Annotated 
 import operator
 import os
 import argparse
@@ -33,7 +34,7 @@ class State(TypedDict):
     """
         State to interpret agent's messages and context.
     """
-    messages: Annotated[List[BaseMessage], operator.add]
+    messages: Annotated[Sequence[BaseMessage], add_messages]  # Changed to add_messages
     actor: str
     recipient: str
     date: str
@@ -49,6 +50,7 @@ def prediction_node(state: State) -> State:
     Returns:
         State: Updated state with the model's prediction
     """
+    
     messages = state["messages"]
     actor = state.get("actor", "")
     recipient = state.get("recipient", "")
@@ -63,19 +65,12 @@ def prediction_node(state: State) -> State:
     else:
         response = model.invoke(messages)
     
-    # Add the LLM response to the messages
-    return {"messages": messages + [response], "actor": actor, "recipient": recipient, "date": date}
+    return {"messages": [response], "actor": actor, "recipient": recipient, "date": date}
+
 
 def feedback_node(state: State) -> State:
     """
-    Feedback node to refine/recheck initial prediction.
-    This runs after tools have been executed or when the agent needs guidance.
-
-    Args:
-        state (State): The current state with messages and context
-
-    Returns:
-        State: Updated state with feedback message
+    Feedback node to provide personalized feedback.
     """
     messages = state["messages"]
     last_message = messages[-1]
@@ -84,12 +79,24 @@ def feedback_node(state: State) -> State:
     if isinstance(last_message, AIMessage) and "Answer:" in last_message.content:
         return state
     
-    guidance = "Based on the information gathered, continue your reasoning. Follow the Thought, Action, PAUSE format, or provide a final Answer if you have sufficient information."
+    # Create a system prompt for the feedback LLM
+    feedback_system_prompt = """
+    Based on the information gathered, continue your reasoning. Follow the Thought, Action, PAUSE format, or provide a final Answer if you have sufficient information.
+    """
     
-    feedback_message = HumanMessage(content=guidance)
+    # Use the model to generate personalized feedback
+    feedback_messages = [
+        SystemMessage(content=feedback_system_prompt),
+        HumanMessage(content=f"Here is the conversation so far: {[m.content for m in messages]}")
+    ]
+    
+    feedback_response = model.invoke(feedback_messages)
+    
+    # Add the feedback as a human message to guide the agent
+    feedback_message = HumanMessage(content=feedback_response.content)
     
     return {
-        "messages": messages + [feedback_message],
+        "messages": [feedback_message],
         "actor": state["actor"],
         "recipient": state["recipient"],
         "date": state["date"]
