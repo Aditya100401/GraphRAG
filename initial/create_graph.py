@@ -15,45 +15,36 @@ def build_temporal_kg(df: pd.DataFrame) -> nx.DiGraph:
         date_str = date.strftime('%Y-%m-%d') if pd.notna(date) else ''
         ts       = date.timestamp()          if pd.notna(date) else None
 
-        etype     = row.get('Event Type', '')
-        place     = row.get('Raw Placename', '')
-        intensity = row.get('Event Intensity')
-        quad      = row.get('Quad Code')
-        contexts  = row.get('Contexts')
-        actor     = row.get('Actor Name')     or row.get('Actor Country')    or ''
-        recipient = row.get('Recipient Name') or row.get('Recipient Country') or ''
-        atitle    = row.get('Actor Title', '')
-        rtitle    = row.get('Recipient Title', '')
-
-        contexts_str = ";".join([c.strip() for c in str(contexts).split(';') if c.strip()]) if pd.notna(contexts) else ""
-
+        # event properties
         G.add_node(eid,
-            node_type     = "event",
-            event_date    = date_str,
-            event_ts      = float(ts) if ts is not None else None,
-            event_type    = str(etype),
-            place         = str(place),
-            intensity     = float(intensity) if pd.notna(intensity) else None,
-            quad_code     = str(quad) if pd.notna(quad) else "",
-            contexts      = contexts_str
-        )
+                    node_type="event",
+                    event_date=date_str,
+                    event_ts=float(ts) if ts is not None else None,
+                    event_type=str(row.get('Event Type', '')),
+                    place=str(row.get('Raw Placename', '')),
+                    quad_code=str(row['Quad Code']) if pd.notna(row.get('Quad Code')) else "",
+                    contexts=";".join([c.strip() for c in str(row.get('Contexts','')).split(';') if c.strip()])
+                    )
 
+        # helper to add actor/recipient/eventType/location nodes
         def add_entity(name, role, extra_title=""):
-            name = str(name).strip()
-            if name and name.lower() not in ("none", "nan"):
-                G.add_node(name, node_type=role, title=str(extra_title))
-                G.add_edge(eid, name, relation=role)
+            n = str(name).strip()
+            if n and n.lower() not in ("none","nan"):
+                G.add_node(n, node_type=role, title=str(extra_title))
+                G.add_edge(eid, n, relation=role)
 
-        add_entity(actor,    "actor",     atitle)
-        add_entity(recipient,"recipient", rtitle)
-        add_entity(etype, "eventType")
-        add_entity(place,"location")
+        add_entity(row.get('Actor Name')    or row.get('Actor Country'),    "actor",     row.get('Actor Title', ''))
+        add_entity(row.get('Recipient Name') or row.get('Recipient Country'), "recipient", row.get('Recipient Title', ''))
+        add_entity(row.get('Event Type'), "eventType")
+        add_entity(row.get('Raw Placename'), "location")
 
-        if actor:
-            actor_events.setdefault(actor, []).append((date, eid))
+        actor = row.get('Actor Name') or row.get('Actor Country')
+        if actor and pd.notna(row['Event Date']):
+            actor_events.setdefault(actor, []).append((row['Event Date'], eid))
 
+    # link each actor’s events in temporal order
     for actor, evts in actor_events.items():
-        timeline = sorted((d,e) for d,e in evts if pd.notna(d))
+        timeline = sorted(evts, key=lambda x: x[0])
         for (_, e1), (_, e2) in zip(timeline, timeline[1:]):
             G.add_edge(e1, e2, relation="next_event", actor=str(actor))
 
@@ -66,19 +57,21 @@ def save_graph(G: nx.DiGraph, out_base: str):
     print(f"[INFO] Saved {out_base}.pkl and {out_base}.graphml")
 
 if __name__ == "__main__":
-    INPUT_DIR  = "datasets/country_sets"               
-    OUTPUT_DIR = "datasets/country_specific_graphs"
+    INPUT_DIR  = "./data/country_sets"
+    OUTPUT_DIR = "./data/country_specific_graphs"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    for csv_path in glob.glob(os.path.join(INPUT_DIR, "combined_data_*.csv")):
-        df       = pd.read_csv(csv_path, low_memory=False)
-        basename = os.path.basename(csv_path).replace(".csv","")
-        print(f"[INFO] Building KG for {basename}...")
+    # process train data
+    for csv_path in glob.glob(os.path.join(INPUT_DIR, "*_train.csv")):
+        df        = pd.read_csv(csv_path, low_memory=False)
+        basename  = os.path.splitext(os.path.basename(csv_path))[0]
+        country, _ = basename.split("_", 1) 
 
+        print(f"[INFO] Building KG for {country} (train)…")
         G = build_temporal_kg(df)
         print(f"  → Nodes: {G.number_of_nodes()}, Edges: {G.number_of_edges()}")
 
-        out_base = os.path.join(OUTPUT_DIR, basename.replace("combined_data_", "graph_combined_"))
+        out_base = os.path.join(OUTPUT_DIR, f"graph_{country}_train")
         save_graph(G, out_base)
 
-    print("[DONE] All combined graphs built.")
+    print("[DONE] All train graphs built.")

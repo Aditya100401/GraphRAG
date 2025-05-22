@@ -1,5 +1,4 @@
 import pickle
-import networkx as nx
 
 def load_graph(file_path):
     """
