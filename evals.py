@@ -81,7 +81,6 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
             f"What is the most likely relation between '{a_str}' and '{r_str}' "
             f"on {d_str}? Pick your top 3 from: {EVENT_TYPES}"
         )
-        logging.info(f"Row {idx}: Query: {query_str}")
 
         try:
             top3, messages, all_messages_str = get_predictions(graph, query_str, a_str, r_str, d_str, debug=debug)
@@ -103,21 +102,21 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
         use_stemmer=True,
         rouge_types=["rouge1"],
         use_aggregator=False
-    )["rouge1"]
+    )["rouge1"] # type: ignore
     scores2 = rouge.compute(
         predictions=preds2,
         references=refs,
         use_stemmer=True,
         rouge_types=["rouge1"],
         use_aggregator=False
-    )["rouge1"]
+    )["rouge1"] # type: ignore
     scores3 = rouge.compute(
         predictions=preds3,
         references=refs,
         use_stemmer=True,
         rouge_types=["rouge1"],
         use_aggregator=False
-    )["rouge1"]
+    )["rouge1"] # type: ignore
 
     best_scores = [max(a, b, c) for a, b, c in zip(scores1, scores2, scores3)]
 

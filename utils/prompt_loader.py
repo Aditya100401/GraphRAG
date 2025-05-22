@@ -9,4 +9,4 @@ def load_prompt(yaml_path: str = "prompts/system_prompt.yaml") -> str:
     data = yaml.safe_load(Path(yaml_path).read_text())
     prompt = data.get("template")
 
-    return SystemMessage(content=prompt)
+    return SystemMessage(content=prompt) # type: ignore
