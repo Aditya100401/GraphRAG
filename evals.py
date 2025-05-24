@@ -6,9 +6,23 @@ from tqdm import tqdm
 import evaluate
 import logging
 import sys
+import torch
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 from create_agent import run_agent
-from utils.load_graph import load_graph   
+from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
+from huggingface_hub import login
+HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+if HUGGINGFACEHUB_API_TOKEN:
+    login(token=HUGGINGFACEHUB_API_TOKEN)
+else:
+    print("Warning: No HUGGINGFACE_TOKEN environment variable found. Some models may not be accessible.")
+
+
+from utils.load_graph import load_graph
 
 EVENT_TYPES = (
     "ACCUSE", "ASSAULT", "AID", "REQUEST", "PROTEST", "COERCE", "THREATEN",
@@ -28,13 +42,14 @@ def extract_pred(answer_text):
     valid = [p for p in parts if p in EVENT_TYPES]
     return (valid + [""]*3)[:3]
 
-def get_predictions(graph, query, actor, recipient, date, debug=False):
+def get_predictions(graph, model, query, actor, recipient, date, debug=False):
     if debug:
         logging.info(f"Query: {query}")
     try:
         result = run_agent(
             graph=graph,
             query=query,
+            model=model,
             actor=actor,
             recipient=recipient,
             date=date
@@ -57,6 +72,21 @@ def get_predictions(graph, query, actor, recipient, date, debug=False):
 
 def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=False):
     graph = load_graph(graph_pkl)
+    llm = HuggingFacePipeline.from_model_id(
+        model_id="meta-llama/Llama-3.3-70B-Instruct",
+        task="text-generation",
+        device_map="balanced",
+        pipeline_kwargs=dict(
+            return_full_text=False,
+            do_sample=False,
+        ),
+        model_kwargs={
+            "torch_dtype": torch.float16,
+        }
+    )
+    llm.model_id = "meta-llama/Llama-3.3-70B-Instruct"
+    chat_llm = ChatHuggingFace(llm=llm, model_id=llm.model_id)
+
     df = pd.read_csv(input_csv)
     refs = df["Event Type"].astype(str).str.upper().tolist()
 
@@ -83,11 +113,11 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
         )
 
         try:
-            top3, messages, all_messages_str = get_predictions(graph, query_str, a_str, r_str, d_str, debug=debug)
+            top3, messages, all_messages_str = get_predictions(graph, chat_llm, query_str, a_str, r_str, d_str, debug=debug)
         except Exception as e:
             logging.error(f"Exception at row {idx}: {e}", exc_info=True)
             top3, messages, all_messages_str = ["", "", ""], [], ""
-        
+
         preds1.append(top3[0])
         preds2.append(top3[1])
         preds3.append(top3[2])
