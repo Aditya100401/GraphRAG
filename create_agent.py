@@ -73,8 +73,10 @@ def create_workflow(graph, model):
     tools = get_tools(graph)
     tool_node = ToolNode(tools)
 
+    model_with_tools = model.bind_tools(tools)
+
     workflow = StateGraph(MessageState)
-    workflow.add_node("agent", partial(call_model, model))
+    workflow.add_node("agent", partial(call_model, model_with_tools))
     workflow.add_node("tools", tool_node)
 
     workflow.add_edge(START, "agent")
