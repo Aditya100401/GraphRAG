@@ -57,15 +57,15 @@ def save_graph(G: nx.DiGraph, out_base: str):
     print(f"[INFO] Saved {out_base}.pkl and {out_base}.graphml")
 
 if __name__ == "__main__":
-    INPUT_DIR  = "./data/country_sets"
-    OUTPUT_DIR = "./data/country_specific_graphs"
+    INPUT_DIR  = "./data/final_splits"
+    OUTPUT_DIR = "./data/graphs"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # process train data
-    for csv_path in glob.glob(os.path.join(INPUT_DIR, "*_train.csv")):
+    for csv_path in glob.glob(os.path.join(INPUT_DIR, "train*.csv")):
         df        = pd.read_csv(csv_path, low_memory=False)
         basename  = os.path.splitext(os.path.basename(csv_path))[0]
-        country, _ = basename.split("_", 1) 
+        country   = basename.replace("train", "")  # Extract country code after 'train'
 
         print(f"[INFO] Building KG for {country} (train)…")
         G = build_temporal_kg(df)
