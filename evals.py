@@ -20,9 +20,6 @@ load_dotenv()
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 if HUGGINGFACEHUB_API_TOKEN:
     login(token=HUGGINGFACEHUB_API_TOKEN)
-else:
-    print("Warning: No HUGGINGFACE_TOKEN environment variable found. Some models may not be accessible.")
-
 
 EVENT_TYPES = (
     "ACCUSE", "ASSAULT", "AID", "REQUEST", "PROTEST", "COERCE", "THREATEN",
@@ -30,7 +27,6 @@ EVENT_TYPES = (
     "CONSULT", "REJECT"
 )
 
-# ------------- LOGGING SETUP -------------
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -43,104 +39,8 @@ def extract_pred(answer_text):
     valid = [p for p in parts if p in EVENT_TYPES]
     return (valid + [""]*3)[:3]
 
-def validate_predictions(predictions, event_intensity, event_type):
-    """
-    Validates predictions against event intensity and type constraints.
-    Returns corrected predictions if violations are found.
-    """
-    valid_preds = []
-    
-    # Define intensity-based allowed predictions
-    if event_intensity < -5:  # Very hostile
-        allowed = ["ASSAULT", "THREATEN", "COERCE", "PROTEST", "SANCTION", "ACCUSE", "REJECT", "RETREAT"]
-    elif event_intensity < -2:  # Moderately hostile  
-        allowed = ["THREATEN", "ACCUSE", "PROTEST", "SANCTION", "REJECT", "COERCE", "MOBILIZE"]
-    elif event_intensity < 0:  # Mildly hostile
-        allowed = ["ACCUSE", "THREATEN", "REJECT", "PROTEST", "CONSULT", "REQUEST"]
-    else:  # Neutral or positive
-        allowed = ["COOPERATE", "CONSULT", "REQUEST", "AID", "CONCEDE", "MOBILIZE"]
-    
-    # Event type specific constraints (common follow-up patterns)
-    event_constraints = {
-        "Assault": ["ASSAULT", "THREATEN", "COERCE", "RETREAT", "PROTEST", "SANCTION"],
-        "Accuse": ["ACCUSE", "THREATEN", "REJECT", "PROTEST", "CONSULT", "REQUEST"],
-        "Sanction": ["SANCTION", "THREATEN", "PROTEST", "REJECT", "ACCUSE", "COERCE"],
-        "Protest": ["PROTEST", "THREATEN", "ACCUSE", "COERCE", "SANCTION", "REJECT"],
-        "Request": ["REQUEST", "COOPERATE", "CONSULT", "REJECT", "ACCUSE", "AID"],
-        "Mobilize": ["MOBILIZE", "THREATEN", "ASSAULT", "PROTEST", "COERCE", "RETREAT"],
-    }
-    
-    # Get event-specific constraints (if available)
-    event_allowed = event_constraints.get(event_type, allowed)
-    
-    # Combine intensity and event constraints (intersection)
-    final_allowed = list(set(allowed) & set(event_allowed))
-    
-    # If intersection is too restrictive, fall back to intensity constraints
-    if len(final_allowed) < 3:
-        final_allowed = allowed
-    
-    # Validate each prediction
-    for pred in predictions:
-        if pred and pred in final_allowed:
-            valid_preds.append(pred)
-        elif pred:  # Invalid prediction, replace with valid alternative
-            # Find the most appropriate replacement based on intensity
-            if event_intensity < -5:
-                replacement = "THREATEN"
-            elif event_intensity < -2:
-                replacement = "ACCUSE"  
-            elif event_intensity < 0:
-                replacement = "REJECT"
-            else:
-                replacement = "COOPERATE"
-            
-            # Ensure replacement is in allowed list
-            if replacement in final_allowed:
-                valid_preds.append(replacement)
-            elif final_allowed:
-                valid_preds.append(final_allowed[0])
-    
-    # Fill up to 3 predictions if needed
-    while len(valid_preds) < 3 and final_allowed:
-        for candidate in final_allowed:
-            if candidate not in valid_preds:
-                valid_preds.append(candidate)
-                break
-        if len(valid_preds) == len(final_allowed):  # Avoid infinite loop
-            break
-    
-    # Final fallback if still not enough predictions
-    fallback_order = ["THREATEN", "ACCUSE", "COOPERATE", "CONSULT", "REJECT"]
-    for fallback in fallback_order:
-        if len(valid_preds) >= 3:
-            break
-        if fallback not in valid_preds:
-            if event_intensity < 0 and fallback in ["THREATEN", "ACCUSE", "REJECT"]:
-                valid_preds.append(fallback)
-            elif event_intensity >= 0 and fallback in ["COOPERATE", "CONSULT"]:
-                valid_preds.append(fallback)
-    
-    return valid_preds[:3]
-
-def get_intensity_description(intensity):
-    """Convert intensity value to descriptive text"""
-    if intensity < -7:
-        return "extremely negative (severe hostility/violence)"
-    elif intensity < -5:
-        return "highly negative (significant hostility)"
-    elif intensity < -2:
-        return "moderately negative (notable hostility)"
-    elif intensity < 0:
-        return "mildly negative (some tension)"
-    elif intensity == 0:
-        return "neutral"
-    else:
-        return "positive (cooperative/supportive)"
-
-def build_context_aware_query(row, event_types):
+def build_query(row, event_types):
     """Build a context-aware query that includes current event information"""
-    # Extract data safely
     actor = str(row.get("Actor Name", "")) if pd.notna(row.get("Actor Name")) else ""
     recipient = str(row.get("Recipient Name", "")) if pd.notna(row.get("Recipient Name")) else ""
     date = str(row.get("Event Date", "")) if pd.notna(row.get("Event Date")) else ""
@@ -149,9 +49,20 @@ def build_context_aware_query(row, event_types):
     contexts = str(row.get("Contexts", "")) if pd.notna(row.get("Contexts")) else ""
     
     # Get intensity description
-    intensity_desc = get_intensity_description(event_intensity)
+    if event_intensity < -7:
+        intensity_desc = "extremely negative (severe hostility/violence)"
+    elif event_intensity < -5:
+        intensity_desc = "highly negative (significant hostility)"
+    elif event_intensity < -2:
+        intensity_desc = "moderately negative (notable hostility)"
+    elif event_intensity < 0:
+        intensity_desc = "mildly negative (some tension)"
+    elif event_intensity == 0:
+        intensity_desc = "neutral"
+    else:
+        intensity_desc = "positive (cooperative/supportive)"
     
-    # Build comprehensive query
+    # Build comprehensive query that matches your system prompt expectations
     query = f"""Given this context:
 - Current event: {event_type} (intensity: {event_intensity} - {intensity_desc})
 - Event context: {contexts}
@@ -160,27 +71,16 @@ def build_context_aware_query(row, event_types):
 
 Based on this current event and the historical relationship patterns between these actors, what are the 3 most likely follow-up event types that could occur between {actor} and {recipient}?
 
-Consider:
-1. The current event intensity ({event_intensity}) and its implications for likely responses
-2. Historical patterns between these actors from your knowledge base
-3. Typical escalation/de-escalation patterns in international relations
-4. Logical consistency (hostile events typically trigger defensive or retaliatory responses)
-5. Power dynamics and contextual factors
-
-Important constraints:
-- For very negative events (intensity < -5), responses are typically hostile: THREATEN, ASSAULT, COERCE, PROTEST, SANCTION
-- For moderately negative events (intensity -2 to -5), responses may include: ACCUSE, THREATEN, REJECT, PROTEST
-- For neutral/positive events (intensity >= 0), responses may include: COOPERATE, CONSULT, REQUEST, AID
+Consider the current event intensity ({event_intensity}) and apply the intensity-based prediction rules from your guidelines.
 
 Choose your top 3 predictions from: {event_types}"""
     
     return query, actor, recipient, date, event_intensity, event_type
 
-def get_predictions(graph, model, query, actor, recipient, date, event_intensity=0, event_type="", debug=False):
-    """Enhanced version with validation"""
+def get_agent_predictions(graph, model, query, actor, recipient, date, debug=False):
+    """Get agent predictions WITHOUT any validation or correction"""
     if debug:
         logging.info(f"Query: {query}")
-        logging.info(f"Event context: {event_type}, Intensity: {event_intensity}")
     
     try:
         result = run_agent(
@@ -193,13 +93,10 @@ def get_predictions(graph, model, query, actor, recipient, date, event_intensity
         )
     except Exception as e:
         logging.error(f"Error running agent: {e}", exc_info=True)
-        # Return validation-based fallback
-        fallback_preds = validate_predictions(["", "", ""], event_intensity, event_type)
-        return fallback_preds, [], str(e)
+        return ["", "", ""], [], str(e)
 
     if not result["messages"]:
-        fallback_preds = validate_predictions(["", "", ""], event_intensity, event_type)
-        return fallback_preds, [], "No messages returned"
+        return ["", "", ""], [], "No messages returned"
 
     last = result["messages"][-1].content
     all_messages_str = "\n\n".join(
@@ -207,29 +104,75 @@ def get_predictions(graph, model, query, actor, recipient, date, event_intensity
         for m in result["messages"]
     )
 
-    # Extract predictions from answer
+    # Extract predictions from answer - NO VALIDATION
     m = re.search(r"Answer:\s*(.*)", last, re.IGNORECASE)
     if not m:
         # Try alternative extraction patterns
         m = re.search(r"(?:final answer|prediction|conclusion):\s*(.*)", last, re.IGNORECASE)
         if not m:
             logging.warning(f"No 'Answer:' found in response: {last[:200]}...")
-            # Fallback validation-based prediction
-            fallback_preds = validate_predictions(["", "", ""], event_intensity, event_type)
-            return fallback_preds, result["messages"], all_messages_str
+            return ["", "", ""], result["messages"], all_messages_str
     
+    # Return RAW predictions - let the agent succeed or fail on its own merit
     raw_preds = extract_pred(m.group(1))
     
-    # Apply validation to ensure logical consistency
-    validated_preds = validate_predictions(raw_preds, event_intensity, event_type)
-    
     if debug:
-        logging.info(f"Raw predictions: {raw_preds}")
-        logging.info(f"Validated predictions: {validated_preds}")
+        logging.info(f"Agent predictions: {raw_preds}")
     
-    return validated_preds, result["messages"], all_messages_str
+    return raw_preds, result["messages"], all_messages_str
+
+def analyze_agent_reasoning(df_results):
+    """Analyze agent's logical reasoning patterns without correcting them"""
+    
+    analysis = {
+        'total_predictions': 0,
+        'logical_violations': 0,
+        'intensity_violations': 0,
+        'empty_predictions': 0,
+        'valid_format': 0
+    }
+    
+    violation_examples = []
+    
+    for idx, row in df_results.iterrows():
+        event_type = row.get('Event Type', '')
+        event_intensity = row.get('Event Intensity', 0)
+        pred1 = row.get('pred1', '')
+        
+        analysis['total_predictions'] += 1
+        
+        if not pred1:
+            analysis['empty_predictions'] += 1
+            continue
+            
+        if pred1 in EVENT_TYPES:
+            analysis['valid_format'] += 1
+        
+        # Check for logical violations (for analysis only, NOT correction)
+        violation = None
+        if event_intensity < -2 and pred1 == "COOPERATE":
+            violation = "cooperative_after_hostility"
+            analysis['intensity_violations'] += 1
+        elif event_intensity > 2 and pred1 in ["ASSAULT", "THREATEN"]:
+            violation = "hostility_after_cooperation"
+            analysis['intensity_violations'] += 1
+        elif event_type == "Assault" and pred1 == "COOPERATE":
+            violation = "cooperative_after_assault"
+            analysis['logical_violations'] += 1
+        
+        if violation:
+            violation_examples.append({
+                'row': idx,
+                'event_type': event_type,
+                'intensity': event_intensity,
+                'prediction': pred1,
+                'violation_type': violation
+            })
+    
+    return analysis, violation_examples
 
 def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=False):
+    """Clean evaluation of agent performance without any prediction validation"""
     graph = load_graph(graph_pkl)
     inference_url = "http://localhost:8000/v1"
 
@@ -248,48 +191,35 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
     preds1, preds2, preds3 = [], [], []
     raw_outputs = []
     all_messages_list = []
-    validation_stats = {"total_validated": 0, "intensity_violations": 0, "no_answer_found": 0}
+    failed_queries = 0
 
-    logging.info(f"Starting evaluation on {len(df)} test cases...")
+    logging.info(f"Starting clean evaluation on {len(df)} test cases...")
     
     for idx, row in tqdm(df.iterrows(), total=len(df)):
         # Build context-aware query
-        query_str, actor, recipient, date, event_intensity, event_type = build_context_aware_query(row, EVENT_TYPES)
+        query_str, actor, recipient, date, event_intensity, event_type = build_query(row, EVENT_TYPES)
         
         if debug:
             logging.info(f"\nRow {idx}: {event_type} (intensity: {event_intensity})")
             logging.info(f"Actor: {actor}, Recipient: {recipient}, Date: {date}")
 
         try:
-            top3, messages, all_messages_str = get_predictions(
-                graph, llm, query_str, actor, recipient, date, 
-                event_intensity=event_intensity, event_type=event_type, debug=debug
+            # Get agent predictions - NO VALIDATION OR CORRECTION
+            top3, messages, all_messages_str = get_agent_predictions(
+                graph, llm, query_str, actor, recipient, date, debug=debug
             )
             
-            # Track validation statistics
-            if not messages or not messages[-1].content:
-                validation_stats["no_answer_found"] += 1
-            else:
-                # Check if validation was needed (compare with raw extraction)
-                last_content = messages[-1].content
-                m = re.search(r"Answer:\s*(.*)", last_content, re.IGNORECASE)
-                if m:
-                    raw_preds = extract_pred(m.group(1))
-                    if raw_preds != top3:
-                        validation_stats["total_validated"] += 1
-                        # Check for intensity violations in raw predictions
-                        for pred in raw_preds:
-                            if pred and event_intensity < -2 and pred == "COOPERATE":
-                                validation_stats["intensity_violations"] += 1
-                                break
+            if not top3[0]:  # Empty prediction
+                failed_queries += 1
                             
         except Exception as e:
             logging.error(f"Exception at row {idx}: {e}", exc_info=True)
-            top3 = validate_predictions(["", "", ""], event_intensity, event_type)
+            top3 = ["", "", ""]
             messages, all_messages_str = [], ""
-            validation_stats["no_answer_found"] += 1
+            failed_queries += 1
 
-        preds1.append(top3[0] if top3[0] else "")
+        # Store RAW predictions
+        preds1.append(top3[0] if len(top3) > 0 and top3[0] else "")
         preds2.append(top3[1] if len(top3) > 1 and top3[1] else "")
         preds3.append(top3[2] if len(top3) > 2 and top3[2] else "")
         raw_outputs.append(messages[-1].content if messages else "")
@@ -297,8 +227,8 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
         
         time.sleep(sleep_time)
 
-    # Calculate ROUGE scores
-    logging.info("Calculating ROUGE scores...")
+    # Calculate ROUGE scores on RAW agent predictions
+    logging.info("Calculating ROUGE scores on raw agent predictions...")
     rouge = evaluate.load("rouge")
     
     scores1 = rouge.compute(
@@ -335,10 +265,13 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
     df["raw_output"] = raw_outputs
     df["all_agent_messages"] = all_messages_list
 
+    # Analyze agent reasoning patterns
+    analysis, violation_examples = analyze_agent_reasoning(df)
+
     # Print results
-    print("\n" + "="*50)
-    print("EVALUATION RESULTS")
-    print("="*50)
+    print("\n" + "="*60)
+    print("PURE AGENT EVALUATION RESULTS")
+    print("="*60)
     print(f"Avg ROUGE-1 @rank1:    {sum(scores1)/len(scores1):.4f}")
     print(f"Avg ROUGE-1 @rank2:    {sum(scores2)/len(scores2):.4f}")
     print(f"Avg ROUGE-1 @rank3:    {sum(scores3)/len(scores3):.4f}")
@@ -351,19 +284,37 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
         percentage = (count / len(preds1)) * 100
         print(f"  {pred}: {count}/{len(preds1)} ({percentage:.1f}%)")
     
-    # Validation statistics
-    print("\nVALIDATION STATISTICS:")
-    print(f"  Cases validated: {validation_stats['total_validated']}/{len(df)} ({validation_stats['total_validated']/len(df)*100:.1f}%)")
-    print(f"  Intensity violations caught: {validation_stats['intensity_violations']}")
-    print(f"  No answer found: {validation_stats['no_answer_found']}")
+    # Agent reasoning analysis
+    print("\nAGENT REASONING ANALYSIS:")
+    print(f"  Total predictions: {analysis['total_predictions']}")
+    print(f"  Failed queries: {failed_queries} ({failed_queries/len(df)*100:.1f}%)")
+    print(f"  Valid format: {analysis['valid_format']}/{analysis['total_predictions']} ({analysis['valid_format']/analysis['total_predictions']*100:.1f}%)")
+    print(f"  Intensity violations: {analysis['intensity_violations']} ({analysis['intensity_violations']/analysis['total_predictions']*100:.1f}%)")
+    print(f"  Logic violations: {analysis['logical_violations']} ({analysis['logical_violations']/analysis['total_predictions']*100:.1f}%)")
+    
+    if violation_examples[:3]:  # Show first 3 examples
+        print("\nExample violations:")
+        for ex in violation_examples[:3]:
+            print(f"  Row {ex['row']}: {ex['event_type']} (intensity {ex['intensity']}) → {ex['prediction']} [{ex['violation_type']}]")
 
     # Save results
     if output_csv:
         df.to_csv(output_csv, index=False)
         print(f"\nSaved results to {output_csv}")
 
+    return {
+        'rouge_scores': {
+            'rank1': sum(scores1)/len(scores1),
+            'rank2': sum(scores2)/len(scores2), 
+            'rank3': sum(scores3)/len(scores3),
+            'best': sum(best_scores)/len(best_scores)
+        },
+        'analysis': analysis,
+        'violations': violation_examples
+    }
+
 def main():
-    parser = argparse.ArgumentParser(description='Evaluate agent predictions with enhanced context awareness.')
+    parser = argparse.ArgumentParser(description='Clean agent evaluation without validation interference.')
     parser.add_argument('--graph_path', '-g', type=str, required=True, help='Path to graph pickle file')
     parser.add_argument('--input', '-i', type=str, required=True, help='Path to input CSV file')
     parser.add_argument('--output', '-o', type=str, required=False, help='Optional: output results file')
@@ -371,13 +322,15 @@ def main():
     parser.add_argument('--debug', action="store_true", help="Print agent outputs for each row")
     args = parser.parse_args()
 
-    evaluate_agent(
+    results = evaluate_agent(
         graph_pkl=args.graph_path,
         input_csv=args.input,
         output_csv=args.output,
         sleep_time=args.sleep_time,
         debug=args.debug
     )
+    
+    return results
 
 if __name__ == "__main__":
     main()
