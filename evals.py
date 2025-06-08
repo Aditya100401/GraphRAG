@@ -177,7 +177,7 @@ def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=
     inference_url = "http://localhost:8000/v1"
 
     llm = ChatOpenAI(
-        model="meta-llama/Llama-3.3-70B-Instruct",
+        model="Qwen/Qwen2.5-32B-Instruct",
         openai_api_key="EMPTY", # type: ignore
         openai_api_base=inference_url, # type: ignore
         temperature=0,
