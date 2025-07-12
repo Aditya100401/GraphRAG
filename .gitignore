@@ -8,3 +8,4 @@ logs/
 *.slurm
 *.log
 Raw_data/
+metrics/

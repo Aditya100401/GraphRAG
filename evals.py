@@ -21,6 +21,8 @@ HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 if HUGGINGFACEHUB_API_TOKEN:
     login(token=HUGGINGFACEHUB_API_TOKEN)
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 EVENT_TYPES = (
     "ACCUSE", "ASSAULT", "AID", "REQUEST", "PROTEST", "COERCE", "THREATEN",
     "RETREAT", "MOBILIZE", "SANCTION", "CONCEDE", "COOPERATE",
@@ -64,7 +66,7 @@ def build_query(row, event_types):
     
     # Build comprehensive query that matches your system prompt expectations
     query = f"""Given this context:
-- Current event: {event_type} (intensity: {event_intensity} - {intensity_desc})
+- Current event intensity: {event_intensity} - {intensity_desc}
 - Event context: {contexts}
 - Actors involved: {actor} and {recipient}  
 - Date: {date}
@@ -174,12 +176,9 @@ def analyze_agent_reasoning(df_results):
 def evaluate_agent(graph_pkl, input_csv, output_csv=None, sleep_time=1.0, debug=False):
     """Clean evaluation of agent performance without any prediction validation"""
     graph = load_graph(graph_pkl)
-    inference_url = "http://localhost:8000/v1"
 
     llm = ChatOpenAI(
-        model="Qwen/Qwen2.5-32B-Instruct",
-        openai_api_key="EMPTY", # type: ignore
-        openai_api_base=inference_url, # type: ignore
+        model="gpt-4o-mini",
         temperature=0,
     )
 
