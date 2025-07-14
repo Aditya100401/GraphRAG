@@ -5,17 +5,20 @@ This directory contains the original implementation files that were modularized 
 ## Files and Directories
 
 ### Core Implementation Files
+
 - **calc_metrics.py** - Original evaluation metrics calculations
 - **evals.py** - Original evaluation pipeline and agent testing
 - **create_agent.py** - Original agent creation logic
 
 ### Supporting Modules
+
 - **tools/** - Directory containing the original agent tools
   - `tools.py` - All 6 specialized agent tools (graph analysis, news search, etc.)
 - **utils/** - Utility functions directory
   - `load_graph.py` - Original graph loading functionality
 
 ### Research and Development Files
+
 - **initial/** - Original research notebooks and experiments
 - **test_runs/** - Historical test run results
 - **metrics/** - Evaluation metrics from previous experiments
@@ -23,6 +26,7 @@ This directory contains the original implementation files that were modularized 
 - **outputs/** - Generated outputs and results
 
 ### Additional Files
+
 - **events.txt** - Event data file
 - **flowchart.png** - System architecture diagram
 - **run_agent.sh** - Shell script for running agents
@@ -43,4 +47,4 @@ These files are kept for reference and historical purposes. The new modularized 
 
 ## Date Archived
 
-July 2024 - During repository modularization for research framework accessibility.
+July 2024 - During repository modularization for research framework accessibility

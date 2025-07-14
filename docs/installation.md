@@ -29,16 +29,19 @@ source graphrag-env/bin/activate  # On Windows: graphrag-env\Scripts\activate
 ### 3. Install Dependencies
 
 #### Option A: Minimal Installation
+
 ```bash
 pip install -e .
 ```
 
 #### Option B: Full Installation (Recommended)
+
 ```bash
 pip install -e ".[full]"
 ```
 
 #### Option C: Development Installation
+
 ```bash
 pip install -e ".[dev]"
 ```
@@ -110,7 +113,8 @@ mkdir -p outputs logs
 ```
 
 Expected structure:
-```
+
+```bash
 data/
 ├── Raw_data/           # Raw NGEC files
 ├── country_sets/       # Country-specific data
@@ -125,6 +129,7 @@ logs/                 # Application logs
 ### Common Issues
 
 #### Import Errors
+
 ```bash
 # If you get import errors, ensure you're in the right environment
 which python
@@ -132,6 +137,7 @@ pip list | grep graphrag
 ```
 
 #### Memory Issues
+
 ```bash
 # For large graphs, increase available memory
 export PYTHONHASHSEED=0
@@ -139,6 +145,7 @@ ulimit -v 8000000  # Limit virtual memory to 8GB
 ```
 
 #### Permission Errors
+
 ```bash
 # On Unix systems, you might need to make scripts executable
 chmod +x scripts/*.py
@@ -147,15 +154,18 @@ chmod +x scripts/*.py
 ### Platform-Specific Notes
 
 #### Windows
+
 - Use `Scripts\activate` instead of `bin/activate`
 - Install Microsoft C++ Build Tools if compilation fails
 - Consider using Windows Subsystem for Linux (WSL)
 
 #### macOS
+
 - Ensure Xcode command line tools are installed: `xcode-select --install`
 - If using Apple Silicon, some packages might need Rosetta 2
 
 #### Linux
+
 - Install system dependencies: `sudo apt-get install build-essential python3-dev`
 - For Ubuntu/Debian: `sudo apt-get install graphviz graphviz-dev`
 
@@ -203,49 +213,3 @@ python scripts/predict.py --help
 3. **Build Graphs**: Create knowledge graphs for your countries
 4. **Try Examples**: Run the provided examples
 5. **Read Documentation**: Check out the API reference and tutorials
-
-## Getting Help
-
-If you encounter issues:
-
-1. Check the [Troubleshooting section](#troubleshooting)
-2. Search [GitHub Issues](https://github.com/your-username/GraphRAG/issues)
-3. Read the [FAQ](faq.md)
-4. Ask in [Discussions](https://github.com/your-username/GraphRAG/discussions)
-
-## Development Setup
-
-For contributors and advanced users:
-
-```bash
-# Clone for development
-git clone https://github.com/your-username/GraphRAG.git
-cd GraphRAG
-
-# Install with development dependencies
-pip install -e ".[dev]"
-
-# Set up pre-commit hooks
-pre-commit install
-
-# Run tests
-pytest tests/
-
-# Format code
-black graphrag/
-isort graphrag/
-```
-
-## Docker Installation (Alternative)
-
-If you prefer using Docker:
-
-```bash
-# Build the container
-docker build -t graphrag .
-
-# Run with mounted data directory
-docker run -v $(pwd)/data:/app/data -e OPENAI_API_KEY=your-key graphrag
-```
-
-*Note: Docker support is experimental. See `Dockerfile` for details.*
