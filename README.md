@@ -8,7 +8,7 @@ A comprehensive framework for geopolitical event prediction using temporal knowl
 
 ## 🎯 Overview
 
-GraphRAG is a modular framework that combines temporal knowledge graphs with LLM agents to predict geopolitical events. The framework processes large-scale event data (NGEC corpus), builds temporal knowledge graphs, and uses intelligent agents with specialized tools for event prediction.
+This is a modular framework that combines temporal knowledge graphs with LLM agents to predict geopolitical events. The framework processes large-scale event data (NGEC corpus), builds temporal knowledge graphs, and uses intelligent agents with specialized tools for event prediction.
 
 ### Key Features
 
