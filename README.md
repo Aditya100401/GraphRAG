@@ -23,18 +23,21 @@ GraphRAG is a modular framework that combines temporal knowledge graphs with LLM
 ### Installation
 
 1. Clone the repository:
+
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Aditya100401/GraphRAG
 cd GraphRAG
 ```
 
 2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 pip install -e .
 ```
 
 3. Set up environment variables:
+
 ```bash
 export OPENAI_API_KEY="your-openai-api-key"
 export NEWS_API_KEY="your-news-api-key"  # Optional for news tools
@@ -89,33 +92,35 @@ python scripts/predict.py --graph-path data/graphs/graph_IND_train.pkl \
 ## 📖 Documentation
 
 - [Installation Guide](docs/installation.md)
-- [Quick Start Tutorial](docs/quickstart.md)
-- [API Reference](docs/api_reference.md)
-- [Paper Reproduction](docs/paper_reproduction.md)
 
 ## 🏗️ Architecture
 
 The framework consists of five main modules:
 
 ### 1. Data Processing (`graphrag.data`)
+
 - **DataLoader**: Load raw and processed event data
 - **DataCleaner**: Clean and preprocess event data with geocoding
 - **DataSplitter**: Create temporal train/test splits
 
 ### 2. Graph Construction (`graphrag.graph`)
+
 - **GraphBuilder**: Build temporal knowledge graphs from event data
 - **GraphSerializer**: Save and load graphs in multiple formats
 
 ### 3. Agent System (`graphrag.agents`)
+
 - **BaseAgent**: Abstract base class for all agents
 - **LangGraphAgent**: LangGraph-based agent implementation
 - **Tools**: Specialized graph query tools for agents
 
 ### 4. Evaluation Framework (`graphrag.evaluation`)
+
 - **EventPredictionMetrics**: Comprehensive metrics calculation
 - **Evaluator**: End-to-end evaluation pipeline
 
 ### 5. Configuration (`config`)
+
 - **settings.py**: Centralized configuration management
 - **system_prompt.yaml**: LLM system prompts
 
@@ -133,12 +138,14 @@ The framework includes six specialized tools for LLM agents:
 ## 📊 Evaluation Metrics
 
 ### Core Metrics
+
 - **Hit@k**: Accuracy at ranks 1, 3, 10
 - **MRR**: Mean Reciprocal Rank
 - **ROUGE-1**: Token overlap scores
 - **F1/Precision/Recall**: Multi-class classification metrics
 
 ### Advanced Metrics
+
 - **Intensity-stratified**: Performance by event intensity levels
 - **Event Coverage**: Prediction diversity and coverage
 - **Temporal Consistency**: Logic violation analysis
@@ -146,7 +153,7 @@ The framework includes six specialized tools for LLM agents:
 
 ## 📁 Project Structure
 
-```
+```text
 GraphRAG/
 ├── graphrag/                    # Main package
 │   ├── data/                   # Data processing
@@ -165,16 +172,19 @@ GraphRAG/
 ## 🧪 Examples
 
 ### QuickStart Example
+
 ```bash
 python examples/quickstart.py
 ```
 
 ### Custom Agent Development
+
 ```bash
 python examples/custom_agent.py
 ```
 
 ### Batch Evaluation
+
 ```bash
 python examples/batch_evaluation.py
 ```
@@ -189,25 +199,24 @@ This framework supports research in:
 - **Evaluation Metrics**: Domain-specific assessment
 - **Multi-modal Integration**: Combining structured and unstructured data
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
 ### Development Setup
 
 1. Clone and install in development mode:
+
 ```bash
-git clone <repo-url>
+git clone https://github.com/Aditya100401/GraphRAG
 cd GraphRAG
 pip install -e ".[dev]"
 ```
 
 2. Run tests:
+
 ```bash
 pytest tests/
 ```
 
 3. Format code:
+
 ```bash
 black graphrag/
 isort graphrag/
@@ -220,8 +229,8 @@ If you use this framework in your research, please cite:
 ```bibtex
 @article{your_paper_2024,
   title={Agentic Reasoning for Social Event Extrapolation: Integrating Knowledge Graphs and Language Models},
-  author={Your Name and Others},
-  journal={Your Journal},
+  author={},
+  journal={},
   year={2024}
 }
 ```
@@ -234,14 +243,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [LangGraph](https://github.com/langchain-ai/langgraph): Agent workflow framework
 - [NetworkX](https://networkx.org/): Graph analysis library
-- [NGEC](https://example.com): Event corpus data source
+- [POLECAT](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AJGVIT): Dataset
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-repo/discussions)
-- **Email**: your.email@university.edu
+- **Email**: <asampat1@charlotte.edu>
 
 ---
 
-**Built with ❤️ for the research community**
+## Built with ❤️ for the research community
