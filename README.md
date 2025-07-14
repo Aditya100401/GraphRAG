@@ -161,12 +161,12 @@ GraphRAG/
 │   ├── agents/                 # Agent system
 │   ├── evaluation/             # Evaluation framework
 │   └── utils/                  # Utilities
-├── config/                     # Configuration
+├── archive/                    # Previous Implementation
+├── config/                     # Configuration 
 ├── scripts/                    # CLI scripts
 ├── examples/                   # Usage examples
-├── docs/                      # Documentation
-├── tests/                     # Unit tests
-└── data/                      # Data storage
+├── docs/                       # Documentation
+└── data/                       # Data storage
 ```
 
 ## 🧪 Examples
