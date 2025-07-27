@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 from collections import Counter
 from sklearn.metrics import precision_recall_fscore_support
-from typing import Dict, Any, List, Optional, Tuple
+from typing import Dict, Any, List, Optional
 import warnings
 import logging
 from config.settings import settings
@@ -141,10 +141,10 @@ class EventPredictionMetrics:
         per_class_metrics = {}
         for i, event_type in enumerate(all_event_types):
             per_class_metrics[event_type] = {
-                'precision': precision[i],
-                'recall': recall[i],
-                'f1': f1[i],
-                'support': support[i]
+                'precision': precision[i], #type: ignore
+                'recall': recall[i], #type: ignore
+                'f1': f1[i], #type: ignore
+                'support': support[i] #type: ignore
             }
         
         # Aggregate metrics
@@ -153,7 +153,7 @@ class EventPredictionMetrics:
         macro_f1 = np.mean(f1)
         
         # Weighted averages 
-        total_support = sum(support)
+        total_support = sum(support) #type: ignore
         if total_support > 0:
             weighted_precision = np.average(precision, weights=support)
             weighted_recall = np.average(recall, weights=support)
@@ -187,7 +187,7 @@ class EventPredictionMetrics:
         # For each sample, check if ANY of the top-k predictions is correct
         best_predictions = []
         for idx, row in df.iterrows():
-            target = refs[idx]
+            target = refs[idx] #type: ignore
             found_correct = False
             
             for rank in range(1, k+1):

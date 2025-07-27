@@ -8,7 +8,7 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode
 from langgraph.errors import GraphRecursionError
 from langgraph.graph.message import add_messages
-from typing import Annotated, Sequence, TypedDict, Dict, Any, List
+from typing import Annotated, Sequence, TypedDict, Dict, Any, List, Optional
 from functools import partial
 import logging
 import yaml
@@ -31,7 +31,7 @@ class MessageState(TypedDict):
 class LangGraphAgent(BaseAgent):
     """LangGraph-based agent for event prediction."""
     
-    def __init__(self, graph, model, max_iterations: int = 0):
+    def __init__(self, graph, model, max_iterations: int = 0, prompt_path: Optional[str] = None):
         """
         Initialize LangGraph agent.
         
@@ -39,9 +39,10 @@ class LangGraphAgent(BaseAgent):
             graph: NetworkX graph with event data
             model: Language model instance
             max_iterations: Maximum number of agent iterations
+            prompt_path: Optional path to system prompt file
         """
         self.max_iterations = max_iterations or settings.MAX_ITERATIONS
-        self.system_prompt = self._load_system_prompt()
+        self.system_prompt = self._load_system_prompt(prompt_path)
         super().__init__(graph, model)
         self.workflow = self._create_workflow()
         
@@ -49,9 +50,16 @@ class LangGraphAgent(BaseAgent):
         """Setup graph-based tools for the agent."""
         return create_graph_tools(self.graph)
     
-    def _load_system_prompt(self) -> BaseMessage:
-        """Load system prompt from configuration."""
-        prompt_path = Path(settings.PROJECT_ROOT) / "config" / "system_prompt.yaml"
+    def _load_system_prompt(self, prompt_path: Optional[str] = None) -> BaseMessage:
+        """
+        Load system prompt from configuration.
+        
+        Args:
+            prompt_path: Optional path to the prompt file. If not provided,
+                        uses the default path from settings.
+        """
+        if prompt_path is None:
+            prompt_path = str(Path(settings.PROJECT_ROOT) / "config" / "system_prompt.yaml")
         
         try:
             with open(prompt_path, 'r') as f:
@@ -59,7 +67,7 @@ class LangGraphAgent(BaseAgent):
                 prompt_text = prompt_data.get('template', '')
                 return HumanMessage(content=prompt_text, name="system")
         except Exception as e:
-            logger.error(f"Error loading system prompt: {e}")
+            logger.error(f"Error loading system prompt from {prompt_path}: {e}")
             # Fallback prompt
             return HumanMessage(content="You are an expert geopolitical event prediction agent.", name="system")
     
@@ -74,7 +82,7 @@ class LangGraphAgent(BaseAgent):
             return END
         
         # Check if agent wants to use tools
-        if not hasattr(last_message, 'tool_calls') or not last_message.tool_calls:
+        if not hasattr(last_message, 'tool_calls') or not last_message.tool_calls: # type: ignore
             return END
         
         return "tools"
@@ -83,7 +91,7 @@ class LangGraphAgent(BaseAgent):
         """Call the model with the current state and update iteration counter."""
         try:
             messages = state["messages"]
-            full_messages = [self.system_prompt] + messages
+            full_messages = [self.system_prompt] + messages # type: ignore
             response = self.model.invoke(full_messages)
             
             logger.debug(f"Model response: {response}")
@@ -91,7 +99,7 @@ class LangGraphAgent(BaseAgent):
             # Update the iteration counter
             current_iteration = state.get("iteration", 0)
             state["iteration"] = current_iteration + 1
-            state["messages"] = messages + [response]
+            state["messages"] = messages + [response] # type: ignore
             
             return state
             
@@ -105,7 +113,6 @@ class LangGraphAgent(BaseAgent):
     def _create_workflow(self):
         """Create the LangGraph workflow."""
         tool_node = ToolNode(self.tools)
-        model_with_tools = self.model.bind_tools(self.tools)
         
         workflow = StateGraph(MessageState)
         workflow.add_node("agent", partial(self._call_model))
@@ -204,11 +211,12 @@ class LangGraphAgent(BaseAgent):
         last_response = self.get_last_response(result)
         
         # Try to extract predictions from "Answer:" format
-        answer_match = re.search(r"Answer:\s*(.*)", last_response, re.IGNORECASE)
+        answer_match = re.search(r"Answer:\s*\[([^\]]+)\]", last_response, re.IGNORECASE)
         if answer_match:
             answer_text = answer_match.group(1)
-            # Split by comma and clean up
-            parts = [p.strip().upper() for p in answer_text.split(",") if p.strip()]
+            # Split by comma and clean up, handling potential spaces and brackets
+            parts = [p.strip().strip('[]').strip().upper() for p in answer_text.split(",")]
+            parts = [p for p in parts if p]  # Remove empty strings
             # Filter to valid event types
             valid_predictions = [p for p in parts if p in settings.EVENT_TYPES]
             # Pad to 3 predictions

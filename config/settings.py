@@ -5,7 +5,7 @@ Centralizes all settings and provides environment-based configuration.
 
 import os
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -28,18 +28,20 @@ class Settings:
         self.GRAPHS_DIR = self.DATA_DIR / "graphs"
         self.OUTPUTS_DIR = self.PROJECT_ROOT / "outputs"
         self.LOGS_DIR = self.PROJECT_ROOT / "logs"
+        self.SYSTEM_PROMPT_PATH = self.PROJECT_ROOT / "config" / "system_prompt.yaml"
         
         # Create directories if they don't exist
         for dir_path in [self.DATA_DIR, self.GRAPHS_DIR, self.OUTPUTS_DIR, self.LOGS_DIR]:
             dir_path.mkdir(parents=True, exist_ok=True)
         
         # API Keys and External Services
+        self.GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")  # Default to empty string
         self.OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
         self.HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
         self.NEWS_API_KEY = os.getenv("NEWS_API_KEY")
         
         # Model Configuration
-        self.DEFAULT_MODEL = "gpt-4o-mini"
+        self.MODEL = "gpt-4o-mini"
         self.MODEL_TEMPERATURE = 0
         self.MAX_TOKENS = 2000
         self.MAX_ITERATIONS = 5
@@ -58,12 +60,12 @@ class Settings:
         self.TEMPORAL_GAP_DAYS = 30
         
         # Graph Configuration
-        self.GRAPH_FORMAT = "pkl"  # Options: pkl, graphml, both
+        self.GRAPH_FORMAT = "pkl" 
         self.INCLUDE_TEMPORAL_EDGES = True
         self.MAX_NEIGHBORS = 50
         
         # Agent Configuration
-        self.AGENT_TYPE = "langgraph"  # Options: react, langgraph
+        self.AGENT_TYPE = "langgraph" 
         self.TOOL_TIMEOUT = 30
         self.MAX_TOOL_CALLS = 10
         
@@ -80,10 +82,11 @@ class Settings:
         
         # Allow environment variables to override settings
         env_overrides = {
-            "DEFAULT_MODEL": os.getenv("GRAPHRAG_MODEL", self.DEFAULT_MODEL),
+            "MODEL": os.getenv("GRAPHRAG_MODEL", self.MODEL),
             "MODEL_TEMPERATURE": float(os.getenv("GRAPHRAG_TEMPERATURE", str(self.MODEL_TEMPERATURE))),
             "AGENT_TYPE": os.getenv("GRAPHRAG_AGENT_TYPE", self.AGENT_TYPE),
             "EVALUATION_SLEEP_TIME": float(os.getenv("GRAPHRAG_SLEEP_TIME", str(self.EVALUATION_SLEEP_TIME))),
+            "SYSTEM_PROMPT_PATH": Path(os.getenv("GRAPHRAG_SYSTEM_PROMPT_PATH", str(self.SYSTEM_PROMPT_PATH))),
         }
         
         for key, value in env_overrides.items():

@@ -4,10 +4,8 @@ Based on the original evals.py implementation.
 """
 
 import pandas as pd
-import numpy as np
 import time
 import logging
-import regex as re
 from typing import Dict, Any, List, Optional, Tuple
 from collections import Counter
 from tqdm import tqdm
@@ -15,7 +13,6 @@ import evaluate
 
 from .metrics import EventPredictionMetrics
 from ..agents.base import BaseAgent
-from ..graph.serializer import load_graph
 from config.settings import settings
 
 logger = logging.getLogger(__name__)
@@ -23,7 +20,7 @@ logger = logging.getLogger(__name__)
 class Evaluator:
     """Comprehensive evaluator for event prediction agents."""
     
-    def __init__(self, agent: BaseAgent, sleep_time: float = None):
+    def __init__(self, agent: BaseAgent, sleep_time: float = None): #type: ignore
         """
         Initialize evaluator.
         
@@ -114,7 +111,6 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
             return ["", "", ""], [], "No messages returned"
 
         messages = result["messages"]
-        last_content = self.agent.get_last_response(result)
         
         all_messages_str = "\n\n".join(
             f"{getattr(m, 'role', type(m).__name__)}: {getattr(m, 'content', str(m))}"
@@ -122,7 +118,7 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
         )
 
         # Extract predictions from answer - NO VALIDATION
-        predictions = self.agent.extract_predictions(result)
+        predictions = self.agent.extract_predictions(result) #type: ignore
         
         if debug:
             logger.info(f"Agent predictions: {predictions}")
@@ -252,7 +248,7 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
             use_stemmer=settings.ROUGE_USE_STEMMER,
             rouge_types=["rouge1"],
             use_aggregator=False
-        )["rouge1"]
+        )["rouge1"] #type: ignore
         
         scores2 = rouge.compute(
             predictions=preds2,
@@ -260,7 +256,7 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
             use_stemmer=settings.ROUGE_USE_STEMMER,
             rouge_types=["rouge1"],
             use_aggregator=False
-        )["rouge1"]
+        )["rouge1"] #type: ignore
         
         scores3 = rouge.compute(
             predictions=preds3,
@@ -268,7 +264,7 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
             use_stemmer=settings.ROUGE_USE_STEMMER,
             rouge_types=["rouge1"],
             use_aggregator=False
-        )["rouge1"]
+        )["rouge1"] #type: ignore
 
         best_scores = [max(a, b, c) for a, b, c in zip(scores1, scores2, scores3)]
 
@@ -331,9 +327,9 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
         }
     
     def calculate_comprehensive_metrics(self, df: pd.DataFrame, 
-                                      train_df: Optional[pd.DataFrame] = None,
-                                      test_df: Optional[pd.DataFrame] = None,
-                                      output_file: Optional[str] = None) -> Dict[str, Any]:
+                                        train_df: Optional[pd.DataFrame] = None,
+                                        test_df: Optional[pd.DataFrame] = None,
+                                        output_file: Optional[str] = None) -> Dict[str, Any]:
         """
         Calculate comprehensive metrics using the metrics calculator.
         

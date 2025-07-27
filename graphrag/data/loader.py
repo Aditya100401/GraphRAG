@@ -5,7 +5,7 @@ Handles loading and basic preprocessing of event data.
 
 import pandas as pd
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Union
+from typing import List, Dict, Any, Optional
 from config.settings import settings
 import logging
 

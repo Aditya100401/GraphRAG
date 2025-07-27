@@ -5,9 +5,10 @@ Ensures proper temporal separation to prevent data leakage.
 
 import pandas as pd
 from typing import Tuple, Dict, Any, List, Optional
-from datetime import datetime, timedelta
+from datetime import timedelta
 import logging
 from config.settings import settings
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -15,9 +16,9 @@ class DataSplitter:
     """Handles temporal data splitting for event prediction tasks."""
     
     def __init__(self, 
-                 test_split_ratio: float = None, 
-                 temporal_gap_days: int = None,
-                 min_relation_frequency: int = None):
+                test_split_ratio: float = None, #type: ignore
+                temporal_gap_days: int = None, #type: ignore
+                min_relation_frequency: int = None): #type: ignore
         """
         Initialize DataSplitter.
         
@@ -31,7 +32,7 @@ class DataSplitter:
         self.min_relation_frequency = min_relation_frequency or settings.MIN_RELATION_FREQUENCY
         
     def temporal_split(self, df: pd.DataFrame, 
-                      by_relations: bool = True) -> Tuple[pd.DataFrame, pd.DataFrame]:
+                        by_relations: bool = True) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
         Create temporal train/test split with proper separation.
         
@@ -140,7 +141,7 @@ class DataSplitter:
         return train_df, test_df
     
     def country_specific_split(self, df: pd.DataFrame, 
-                              country: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
+                                country: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
         Create country-specific train/test split.
         
@@ -165,7 +166,7 @@ class DataSplitter:
         return self.temporal_split(country_df)
     
     def multi_country_split(self, df: pd.DataFrame, 
-                           countries: List[str]) -> Dict[str, Tuple[pd.DataFrame, pd.DataFrame]]:
+                            countries: List[str]) -> Dict[str, Tuple[pd.DataFrame, pd.DataFrame]]:
         """
         Create splits for multiple countries.
         
@@ -190,7 +191,7 @@ class DataSplitter:
         return results
     
     def save_splits(self, train_df: pd.DataFrame, test_df: pd.DataFrame, 
-                   country: str, output_dir: Optional[str] = None):
+                    country: str, output_dir: Optional[str] = None):
         """
         Save train/test splits to files.
         
@@ -201,16 +202,16 @@ class DataSplitter:
             output_dir: Output directory (uses settings default if None)
         """
         if output_dir is None:
-            output_dir = settings.DATA_DIR / "final_splits"
+            output_dir = settings.DATA_DIR / "final_splits" # type: ignore
         else:
-            output_dir = Path(output_dir)
+            output_dir = Path(output_dir) # type: ignore
         
-        output_dir.mkdir(parents=True, exist_ok=True)
+        output_dir.mkdir(parents=True, exist_ok=True) # type: ignore
         
         # Save files
-        train_path = output_dir / f"train_{country}.csv"
-        test_path = output_dir / f"test_{country}.csv"
-        
+        train_path = output_dir / f"train_{country}.csv" # type: ignore
+        test_path = output_dir / f"test_{country}.csv" # type: ignore
+
         train_df.to_csv(train_path, index=False)
         test_df.to_csv(test_path, index=False)
         
@@ -219,7 +220,7 @@ class DataSplitter:
         logger.info(f"  Test: {test_path} ({len(test_df)} events)")
     
     def get_split_statistics(self, train_df: pd.DataFrame, 
-                           test_df: pd.DataFrame) -> Dict[str, Any]:
+                            test_df: pd.DataFrame) -> Dict[str, Any]:
         """
         Generate statistics about the data split.
         

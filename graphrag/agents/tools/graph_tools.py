@@ -46,16 +46,13 @@ def create_graph_tools(graph: nx.DiGraph) -> List:
         for u, v, data in graph.edges(data=True):
             # Get event nodes that connect to actor or recipient
             event_node = None
-            connected_entity = None
             
             # Check if u is an event node and v is actor/recipient
             if graph.nodes[u].get("node_type") == "event" and v in [actor, recipient]:
                 event_node = u
-                connected_entity = v
             # Check if v is an event node and u is actor/recipient  
             elif graph.nodes[v].get("node_type") == "event" and u in [actor, recipient]:
                 event_node = v
-                connected_entity = u
                 
             if event_node:
                 event_date_str = graph.nodes[event_node].get("event_date")

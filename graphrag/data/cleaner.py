@@ -5,8 +5,7 @@ Implements the cleaning pipeline from the original notebooks.
 
 import pandas as pd
 import numpy as np
-from typing import Dict, Any, Optional, Tuple, List
-from collections import Counter
+from typing import Dict, Any, List
 import logging
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
@@ -127,10 +126,10 @@ class DataCleaner:
                 break
                 
             try:
-                location = self.geocoder.geocode(place, timeout=10)
-                if location and hasattr(location, 'raw') and 'display_name' in location.raw:
+                location = self.geocoder.geocode(place, timeout=10) #type: ignore
+                if location and hasattr(location, 'raw') and 'display_name' in location.raw: #type: ignore
                     # Extract country from display_name (usually the last part)
-                    country = location.raw['display_name'].split(', ')[-1]
+                    country = location.raw['display_name'].split(', ')[-1] #type: ignore
                     geocoded_countries[place] = country
                     geocoded_count += 1
                     
