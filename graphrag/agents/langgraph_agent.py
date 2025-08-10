@@ -211,24 +211,32 @@ class LangGraphAgent(BaseAgent):
         last_response = self.get_last_response(result)
         
         # Try to extract predictions from "Answer:" format
-        answer_match = re.search(r"Answer:\s*\[([^\]]+)\]", last_response, re.IGNORECASE)
-        if answer_match:
-            answer_text = answer_match.group(1)
-            # Split by comma and clean up, handling potential spaces and brackets
-            parts = [p.strip().strip('[]').strip().upper() for p in answer_text.split(",")]
-            parts = [p for p in parts if p]  # Remove empty strings
-            # Filter to valid event types
-            valid_predictions = [p for p in parts if p in settings.EVENT_TYPES]
-            # Pad to 3 predictions
-            return (valid_predictions + ["", "", ""])[:3]
+        answer_patterns = [
+            r"Answer:\s*([A-Z,\s]+)",  # Answer: EVENT1, EVENT2, EVENT3
+            r"Answer:\s*\[([^\]]+)\]",  # Answer: [EVENT1, EVENT2, EVENT3]
+            r"most likely.*?:\s*([A-Z,\s]+)",  # "most likely are: EVENT1, EVENT2"
+            r"predictions?.*?:\s*([A-Z,\s]+)",  # "predictions: EVENT1, EVENT2"
+            r"(?:top|first)\s*3.*?:\s*([A-Z,\s]+)",  # "top 3 are: EVENT1, EVENT2"
+        ]
         
-        # Fallback: try other patterns
-        for pattern in [r"(?:final answer|prediction|conclusion):\s*(.*)", r"Top 3.*?:\s*(.*)"]:
-            match = re.search(pattern, last_response, re.IGNORECASE)
+        for pattern in answer_patterns:
+            match = re.search(pattern, last_response, re.IGNORECASE | re.DOTALL)
             if match:
-                parts = [p.strip().upper() for p in match.group(1).split(",") if p.strip()]
-                valid_predictions = [p for p in parts if p in settings.EVENT_TYPES]
-                return (valid_predictions + ["", "", ""])[:3]
+                answer_text = match.group(1)
+                # Split by comma and clean up
+                parts = [p.strip().strip('[]').strip().upper() for p in answer_text.split(",")]
+                parts = [p for p in parts if p and p in settings.EVENT_TYPES]  # Filter to valid event types
+                if parts:  # Only return if we found valid predictions
+                    return (parts + ["", "", ""])[:3]
+        
+        # Last resort: extract any event types mentioned in the response
+        found_events = []
+        for event_type in settings.EVENT_TYPES:
+            if event_type in last_response.upper():
+                found_events.append(event_type)
+        
+        if found_events:
+            return (found_events + ["", "", ""])[:3]
         
         logger.warning(f"Could not extract predictions from response: {last_response[:200]}...")
         return ["", "", ""]

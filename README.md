@@ -8,7 +8,7 @@ A comprehensive framework for geopolitical event prediction using temporal knowl
 
 ## 🎯 Overview
 
-This is a modular framework that combines temporal knowledge graphs with LLM agents to predict geopolitical events. The framework processes large-scale event data (NGEC corpus), builds temporal knowledge graphs, and uses intelligent agents with specialized tools for event prediction.
+GraphRAG is a modular framework that combines temporal knowledge graphs with LLM agents to predict geopolitical events. The framework processes large-scale event data (NGEC corpus), builds temporal knowledge graphs, and uses intelligent agents with specialized tools for event prediction.
 
 ### Key Features
 
@@ -82,7 +82,7 @@ print(f"Predictions: {predictions}")
 python scripts/build_graph.py --country IND --split train
 
 # Run evaluation
-python scripts/evaluate.py --country IND --graph-path data/graphs/graph_IND_train.pkl
+python scripts/run_evaluation.py --country IND --graph-path data/graphs/graph_IND_train.pkl
 
 # Make single prediction
 python scripts/predict.py --graph-path data/graphs/graph_IND_train.pkl \
@@ -161,7 +161,7 @@ GraphRAG/
 │   ├── agents/                 # Agent system
 │   ├── evaluation/             # Evaluation framework
 │   └── utils/                  # Utilities
-├── archive/                    # Previous Implementation
+├── archive/                    # Archived experiments and old code
 ├── config/                     # Configuration 
 ├── scripts/                    # CLI scripts
 ├── examples/                   # Usage examples
@@ -209,13 +209,7 @@ cd GraphRAG
 pip install -e ".[dev]"
 ```
 
-2. Run tests:
-
-```bash
-pytest tests/
-```
-
-3. Format code:
+2. Format code (optional):
 
 ```bash
 black graphrag/
@@ -227,10 +221,10 @@ isort graphrag/
 If you use this framework in your research, please cite:
 
 ```bibtex
-@article{your_paper_2024,
+@mastersthesis{sampath_2024_graphrag,
   title={Agentic Reasoning for Social Event Extrapolation: Integrating Knowledge Graphs and Language Models},
-  author={},
-  journal={},
+  author={Sampath, Aditya},
+  school={University of North Carolina at Charlotte},
   year={2024}
 }
 ```
@@ -247,7 +241,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Email**: <asampat1@charlotte.edu>
+- **Email**: asampat1@charlotte.edu
 
 ---
 

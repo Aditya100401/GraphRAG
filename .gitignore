@@ -173,3 +173,17 @@ token.json
 *.backup
 *.orig
 
+# Causal Reasoning Experiments
+causal_cl_cot_vs_baseline/
+comparison_results_all_three/
+gemini_comparison_results/
+improved_prompts_comparison/
+optimized_batch_results/
+final_comparison_results/
+Prompt_Comparison_Analysis.md
+Gemini_Prompt_Comparison_Analysis.md
+Prompt_Comparison_Analysis.xlsx
+Comparison Analysis.docx
+causal_reasoning_demo.ipynb
+examples/generate_comparison_report.py
+config/prompt_variations/

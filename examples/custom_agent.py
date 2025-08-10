@@ -19,10 +19,11 @@ from graphrag.agents import LangGraphAgent
 from graphrag.agents.tools import create_graph_tools
 from graphrag.graph import GraphSerializer
 from graphrag.evaluation import Evaluator
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.tools import tool
 from typing import Dict, Any, List
 import logging
+from config.settings import settings
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -33,7 +34,7 @@ class CustomGraphAgent(BaseAgent):
     Custom agent implementation with additional features.
     """
     
-    def __init__(self, graph, model, custom_tools: List = None):
+    def __init__(self, graph, model, custom_tools: List = None): #type: ignore
         """Initialize custom agent with optional custom tools."""
         self.custom_tools = custom_tools or []
         super().__init__(graph, model)
@@ -100,17 +101,21 @@ def compare_agents():
         try:
             graph = serializer.load_graph("quickstart_example", "pkl")
             print(f"✓ Loaded graph: {graph.number_of_nodes()} nodes")
-        except:
+        except FileNotFoundError:
             print("⚠ No existing graph found. Run quickstart.py first to create a graph.")
             return
         
         # Initialize model
         try:
-            model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+            model = ChatGoogleGenerativeAI(
+                model="gemini-2.5-pro",
+                google_api_key=settings.GOOGLE_API_KEY,
+                temperature=settings.MODEL_TEMPERATURE
+            )
             print("✓ Model initialized")
         except Exception as e:
             print(f"⚠ Could not initialize model: {e}")
-            print("This example requires an OpenAI API key.")
+            print("This example requires a Google API key.")
             return
         
         # 1. Standard LangGraph Agent
@@ -141,7 +146,11 @@ def compare_agents():
         print("-" * 35)
         
         # High temperature agent (more creative)
-        creative_model = ChatOpenAI(model="gpt-4o-mini", temperature=0.8)
+        creative_model = ChatGoogleGenerativeAI(
+            model="gemini-2.5-pro",
+            google_api_key=settings.GOOGLE_API_KEY,
+            temperature=0.8
+        )
         creative_agent = LangGraphAgent(graph, creative_model, max_iterations=2)
         
         result3 = creative_agent.run(query, actor="India", recipient="Pakistan", date="2024-01-15")

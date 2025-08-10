@@ -184,7 +184,7 @@ class GraphSerializer:
         Returns:
             Dictionary with saved file paths
         """
-        filename = f"graph_{country}_{split}"
+        filename = f"graph__{country}_{split}"
         return self.save_graph(graph, filename)
     
     def load_country_graph(self, country: str, split: str = "train", 
@@ -200,7 +200,7 @@ class GraphSerializer:
         Returns:
             Loaded graph
         """
-        filename = f"graph_{country}_{split}"
+        filename = f"graph__{country}_{split}"
         return self.load_graph(filename, format)
     
     def list_available_graphs(self) -> dict:

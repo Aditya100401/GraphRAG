@@ -238,41 +238,41 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
             
             time.sleep(self.sleep_time)
 
-        # Calculate ROUGE scores on RAW agent predictions
-        logger.info("Calculating ROUGE scores on raw agent predictions...")
-        rouge = evaluate.load("rouge")
+        # Calculate ranking metrics (Hit@1, Hit@3, MRR) instead of ROUGE
+        logger.info("Calculating ranking metrics (Hit@1, Hit@3, MRR)...")
         
-        scores1 = rouge.compute(
-            predictions=preds1,
-            references=refs,
-            use_stemmer=settings.ROUGE_USE_STEMMER,
-            rouge_types=["rouge1"],
-            use_aggregator=False
-        )["rouge1"] #type: ignore
+        hit_at_1 = []
+        hit_at_3 = []
+        mrr_scores = []
         
-        scores2 = rouge.compute(
-            predictions=preds2,
-            references=refs,
-            use_stemmer=settings.ROUGE_USE_STEMMER,
-            rouge_types=["rouge1"],
-            use_aggregator=False
-        )["rouge1"] #type: ignore
+        for i, true_event in enumerate(refs):
+            pred_list = [preds1[i], preds2[i], preds3[i]]
+            
+            # Hit@1: True if first prediction matches
+            hit_1 = 1 if pred_list[0] == true_event else 0
+            hit_at_1.append(hit_1)
+            
+            # Hit@3: True if any of top 3 predictions match
+            hit_3 = 1 if true_event in pred_list else 0
+            hit_at_3.append(hit_3)
+            
+            # MRR: Mean Reciprocal Rank
+            mrr = 0
+            for rank, pred in enumerate(pred_list, 1):
+                if pred == true_event:
+                    mrr = 1.0 / rank
+                    break
+            mrr_scores.append(mrr)
         
-        scores3 = rouge.compute(
-            predictions=preds3,
-            references=refs,
-            use_stemmer=settings.ROUGE_USE_STEMMER,
-            rouge_types=["rouge1"],
-            use_aggregator=False
-        )["rouge1"] #type: ignore
-
-        best_scores = [max(a, b, c) for a, b, c in zip(scores1, scores2, scores3)]
+        # Calculate exact match scores for compatibility
+        exact_match_1 = [1 if p == r else 0 for p, r in zip(preds1, refs)]
+        exact_match_2 = [1 if p == r else 0 for p, r in zip(preds2, refs)]
+        exact_match_3 = [1 if p == r else 0 for p, r in zip(preds3, refs)]
 
         # Add results to dataframe
         df["pred1"], df["pred2"], df["pred3"] = preds1, preds2, preds3
-        df["rouge1_1"], df["rouge1_2"], df["rouge1_3"], df["rouge1_best"] = (
-            scores1, scores2, scores3, best_scores
-        )
+        df["exact_match_1"], df["exact_match_2"], df["exact_match_3"] = exact_match_1, exact_match_2, exact_match_3
+        df["hit_at_1"], df["hit_at_3"], df["mrr"] = hit_at_1, hit_at_3, mrr_scores
         df["raw_output"] = raw_outputs
         df["all_agent_messages"] = all_messages_list
 
@@ -281,12 +281,14 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
 
         # Print results
         print("\n" + "="*60)
-        print("PURE AGENT EVALUATION RESULTS")
+        print("AGENT EVALUATION RESULTS")
         print("="*60)
-        print(f"Avg ROUGE-1 @rank1:    {sum(scores1)/len(scores1):.4f}")
-        print(f"Avg ROUGE-1 @rank2:    {sum(scores2)/len(scores2):.4f}")
-        print(f"Avg ROUGE-1 @rank3:    {sum(scores3)/len(scores3):.4f}")
-        print(f"Avg ROUGE-1 best-of-3: {sum(best_scores)/len(best_scores):.4f}")
+        print(f"Hit@1 (Rank 1 Accuracy): {sum(hit_at_1)/len(hit_at_1):.4f}")
+        print(f"Hit@3 (Top 3 Accuracy):  {sum(hit_at_3)/len(hit_at_3):.4f}")
+        print(f"Mean Reciprocal Rank:    {sum(mrr_scores)/len(mrr_scores):.4f}")
+        print(f"Exact Match @rank1:      {sum(exact_match_1)/len(exact_match_1):.4f}")
+        print(f"Exact Match @rank2:      {sum(exact_match_2)/len(exact_match_2):.4f}")
+        print(f"Exact Match @rank3:      {sum(exact_match_3)/len(exact_match_3):.4f}")
         
         # Prediction distribution analysis
         print("\nPREDICTION DISTRIBUTION:")
@@ -315,11 +317,15 @@ Choose your top 3 predictions from: {', '.join(settings.EVENT_TYPES)}"""
 
         return {
             'dataframe': df,
-            'rouge_scores': {
-                'rank1': sum(scores1)/len(scores1),
-                'rank2': sum(scores2)/len(scores2), 
-                'rank3': sum(scores3)/len(scores3),
-                'best': sum(best_scores)/len(best_scores)
+            'ranking_metrics': {
+                'hit_at_1': sum(hit_at_1)/len(hit_at_1),
+                'hit_at_3': sum(hit_at_3)/len(hit_at_3),
+                'mrr': sum(mrr_scores)/len(mrr_scores)
+            },
+            'exact_match_scores': {
+                'rank1': sum(exact_match_1)/len(exact_match_1),
+                'rank2': sum(exact_match_2)/len(exact_match_2), 
+                'rank3': sum(exact_match_3)/len(exact_match_3)
             },
             'analysis': analysis,
             'violations': violation_examples,
